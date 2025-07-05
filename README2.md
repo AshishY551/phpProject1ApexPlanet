@@ -1,5 +1,8 @@
 # Simple PHP Web Page
 
+http://apex.local/#
+http://apex.local/#
+
 This is a basic PHP-powered web page designed to demonstrate the structure and functionality of a simple PHP project. It displays a welcome message and the current date dynamically using PHP.
 
 ## Features

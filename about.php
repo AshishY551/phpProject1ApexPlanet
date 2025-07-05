@@ -1,6 +1,5 @@
 <?php
-$pageTitle = "🌐 ApexPlanet | Elevating Web Innovation";
-$currentTime = date("l, F j, Y - h:i:s A");
+$pageTitle = "🌍 About | ApexPlanet – Our Vision, Mission & Values";
 $year = date("Y");
 ?>
 <!DOCTYPE html>
@@ -9,15 +8,12 @@ $year = date("Y");
   <!-- Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ApexPlanet: Futuristic platform for secure and dynamic PHP development." />
-  <meta property="og:title" content="ApexPlanet | Elevating Web Innovation" />
-  <meta property="og:image" content="https://yourdomain.com/assets/preview.png" />
-  <meta property="og:url" content="http://apex.local" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <title><?php echo $pageTitle; ?></title>
+  <meta name="description" content="Learn more about ApexPlanet – our mission, vision, core values, and the journey driving our innovation." />
+  <meta name="keywords" content="About ApexPlanet, Vision, Mission, Innovation, Web Development" />
+  <meta name="author" content="ApexPlanet Team" />
 
-  <!-- Bootstrap + Google Fonts -->
+  <!-- Bootstrap & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -26,34 +22,22 @@ $year = date("Y");
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f1f3f5, #e0f7fa);
+      background: linear-gradient(to right, #ece9e6, #ffffff);
       color: #212529;
       padding-top: 90px;
       transition: background 0.4s, color 0.4s;
     }
 
     .dark-mode {
-      background-color: #121212 !important;
+      background: #121212 !important;
       color: #f8f9fa;
     }
-
-    .dark-mode .text-dark {
-  color: #ffffff !important;
-}
 
     .dark-mode .container,
     .dark-mode header,
     .dark-mode footer {
-      background-color: #1f1f1f;
-    }
-
-    .container {
-      max-width: 960px;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-      transition: 0.4s ease;
+      background-color: #1f1f1f !important;
+      color: #f8f9fa;
     }
 
     header {
@@ -65,7 +49,7 @@ $year = date("Y");
       left: 0;
       width: 100%;
       z-index: 999;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
 
     .dark-mode header {
@@ -77,18 +61,18 @@ $year = date("Y");
       font-weight: bold;
       color: #0d6efd;
       font-size: 1.4rem;
+      text-decoration: none;
     }
 
     .nav-link {
       font-weight: 500;
       color: #212529;
       margin-left: 20px;
-      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .nav-link:hover {
       color: #0d6efd;
-      transform: scale(1.05);
     }
 
     .dark-mode .nav-link {
@@ -108,11 +92,9 @@ $year = date("Y");
       align-items: center;
       justify-content: center;
       padding: 0;
-      line-height: 1;
       background: #e9ecef;
       border: none;
       color: #000;
-      transition: 0.3s;
     }
 
     .dark-mode #darkModeToggle {
@@ -120,17 +102,21 @@ $year = date("Y");
       color: #fff;
     }
 
-    .btn-group-custom a {
-      min-width: 160px;
-      transition: transform 0.3s ease;
+    .container {
+      max-width: 960px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
     }
 
-    .btn-group-custom a:hover {
-      transform: scale(1.05);
+    h1, h2 {
+      font-weight: 700;
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       padding: 30px 0;
       text-align: center;
       font-size: 0.9rem;
@@ -164,12 +150,11 @@ $year = date("Y");
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
   </style>
 </head>
 <body class="fade-in">
 
-  <!-- 🔝 Header with Integrated Dark Mode Toggle -->
+  <!-- 🌗 Header with Dark Mode Toggle -->
   <header>
     <div class="d-flex justify-content-between align-items-center">
       <a href="index.php" class="navbar-brand">🚀 ApexPlanet</a>
@@ -183,30 +168,31 @@ $year = date("Y");
     </div>
   </header>
 
-  <!-- 🧠 Main Content -->
-  <div class="container text-center mt-4 ">
-    <h1 class="mb-3 text-primary fw-bold">Welcome to <span class="text-dark">ApexPlanet</span></h1>
-    <p class="lead mb-4">This secure, scalable PHP-driven platform operates seamlessly on Apache Virtual Hosts.</p>
+  <!-- 🌍 Page Content -->
+  <div class="container mt-4">
+    <h1 class="text-primary text-center mb-4">About ApexPlanet</h1>
+    <p class="lead text-center">We’re committed to crafting futuristic, scalable, and secure web ecosystems using modern technology stacks.</p>
 
-    <div class="alert alert-info text-start">
-      <strong>🔒 Server Information</strong>
-      <ul class="mt-2 mb-0">
-        <li><strong>Host:</strong> <code>http://apex.local</code></li>
-        <li><strong>Current Server Time:</strong> <span id="serverTime"><?php echo $currentTime; ?></span></li>
-        <li><strong>PHP Version:</strong> <?php echo phpversion(); ?></li>
-      </ul>
-    </div>
+    <h2 class="mt-5">🚀 Our Mission</h2>
+    <p>To deliver state-of-the-art web applications that prioritize performance, modularity, and user-centric design. We enable innovation through open standards, secure practices, and agile methodologies.</p>
 
-    <div class="btn-group-custom d-flex justify-content-center flex-wrap gap-3 mt-4">
-      <a href="about.php" class="btn btn-outline-primary">🌍 About Us</a>
-      <a href="projects.php" class="btn btn-primary">📂 Explore Projects</a>
-      <a href="contact.php" class="btn btn-success">📬 Contact</a>
-    </div>
+    <h2 class="mt-4">🌐 Our Vision</h2>
+    <p>To become the leading open-source and enterprise web innovation hub, shaping the future of digital transformation globally.</p>
+
+    <h2 class="mt-4">💡 Core Values</h2>
+    <ul>
+      <li><strong>Innovation-First:</strong> Leveraging the latest in PHP, Apache, and cloud-native tools.</li>
+      <li><strong>Security-Driven:</strong> Adhering to best practices across all layers – backend, frontend, and hosting.</li>
+      <li><strong>Community-Centric:</strong> We grow by collaborating, contributing, and empowering others.</li>
+    </ul>
+
+    <h2 class="mt-4">📈 Our Journey</h2>
+    <p>Founded in 2025, ApexPlanet started as a local Apache Virtual Host project and evolved into a full-stack innovation lab. We’ve since helped clients build dynamic platforms across industries – eCommerce, EdTech, SaaS, and beyond.</p>
   </div>
 
-  <!-- 📎 Footer -->
+  <!-- 🔚 Footer -->
   <footer>
-    <p>&copy; <?php echo $year; ?> ApexPlanet. Built with 💡 innovation and 🧠 logic.</p>
+    <p>&copy; <?php echo $year; ?> ApexPlanet. Powered by curiosity & code.</p>
     <div class="footer-icons mt-2">
       <a href="#" title="GitHub">🐱</a>
       <a href="#" title="Twitter">🐦</a>
@@ -214,21 +200,9 @@ $year = date("Y");
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // ⏰ Clock Updater
-    setInterval(() => {
-      const date = new Date();
-      const formatted = date.toLocaleString('en-US', {
-        weekday: 'long', year: 'numeric', month: 'long',
-        day: 'numeric', hour: '2-digit', minute: '2-digit',
-        second: '2-digit', hour12: true
-      });
-      document.getElementById('serverTime').textContent = formatted;
-    }, 1000);
-
-    // 🌗 Dark Mode Logic
     const toggle = document.getElementById('darkModeToggle');
     const body = document.body;
 
