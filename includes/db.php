@@ -1,18 +1,24 @@
 <?php
-// sent these info in /includes/config.php
-require_once __DIR__ . '/config.php';
-// Secure PDO Database Connection
-// $host = 'localhost';
-// $dbname = 'blog'; // Your database name
-// $username = 'root'; // Default for XAMPP/WAMP
-// $password = '';     // Default for XAMPP/WAMP
+// includes/db.php
+
+// Load environment variables from .env using Dotenv
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+// Optional fallback if .env not set (can remove in production)
+$dbHost = $_ENV['DB_HOST'] ?? 'localhost';
+$dbName = $_ENV['DB_NAME'] ?? 'blog';
+$dbUser = $_ENV['DB_USER'] ?? 'root';
+$dbPass = $_ENV['DB_PASS'] ?? '';
 
 try {
-    // Create PDO instance with strict error reporting and UTF-8  best practice settings
+    // ✅ Secure PDO connection with UTF-8 and safe defaults
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
-        $username,
-        $password,
+        "mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4",
+        $dbUser,
+        $dbPass,
         [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -20,8 +26,9 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    // 🛡️Log the error securely and show a generic message
-    error_log("Database connection error: " . $e->getMessage());
+    // 🛡️ Log internal error, show friendly message
+    error_log("🔒 PDO DB connection error: " . $e->getMessage());
     die("Database connection failed. Please try again later.");
 }
 ?>
+

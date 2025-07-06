@@ -1,11 +1,18 @@
 <?php
 // includes/config.php
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'blog');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Load Composer autoloader
+require_once __DIR__ . '/../vendor/autoload.php';
 
-// Optional: base URL and other app constants
-define('BASE_URL', 'http://apex.local'); // Adjust as needed
-define('APP_NAME', 'ApexPlanet Blog');
+// Load environment variables from .env
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
+// Define constants from .env
+define('DB_HOST', $_ENV['DB_HOST']);
+define('DB_NAME', $_ENV['DB_NAME']);
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PASS', $_ENV['DB_PASS']);
+
+define('BASE_URL', $_ENV['BASE_URL']);
+define('APP_NAME', $_ENV['APP_NAME']);

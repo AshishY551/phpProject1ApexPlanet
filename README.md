@@ -5,3 +5,7 @@ http://apex.local/#
 http://apex.local/#
 <!-- <!-- http://apex.local/ -->
          <!-- http://apex.local/ --> -->
+
+// composure gave this 
+PSR-4 autoloading configured. Use "namespace Apexplanet\BlogPlatform;" in src/
+Include the Composer autoloader with: require 'vendor/autoload.php';

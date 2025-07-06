@@ -1,4 +1,18 @@
 <!-- includes/header.php -->
+<!-- php code -->
+<?php
+// public/index.php
+
+// (1) Include required backend setup files
+require_once __DIR__ . '/../includes/config.php';
+require_once __DIR__ . '/../includes/session.php';
+// etc...
+
+// (2) Start HTML
+?>
+
+
+<!-- html code -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +34,9 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
+  <!-- ✅ INCLUDE THE HEADER HERE -->
+  <?php include_once __DIR__ . '/../templates/header.php'; ?>
+  <!-- 🧱 Page-specific content below -->
   <header class="bg-blue-600 py-6 shadow-md">
     <h1 class="text-3xl text-white text-center font-bold tracking-wide">My Blog</h1>
   </header>

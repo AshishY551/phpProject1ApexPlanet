@@ -99,3 +99,106 @@ This is a basic PHP-powered web page designed to demonstrate the structure and f
   </footer>
 </body>
 </html>  this is index.php  , its good but don't you think we need more featured and advance project,    It don't have ,,,,,[1.sticky-header and there {contents- icon and text for to go to other features- with also having drop-downs  and further side-panel opens for those options too},{sign up sign in- which then drop down also to change account sign in ,signout all options}  ,dark mode change icon]  ,,,,,,[2.1 sticky-thin-left-expandable-panel section {for category selection for search of different types of  posts and blogs and comments just like in used in amajon site}],,,,,,[2.2.middle-body-section- { having all sections like for showing (your-best posts - with search and oder by icon options,your- recent posts), (featured posts-with selectors- like search  and order feature or specific post selection), (comment section), (news section search section at last ),(email section at last) } ], ,,,,,,[2.3 sticky-morethin-right-expandable-panel section {with links to the optons or pages like--- find people search, connect people, go to your profile, your connections,news, take our best subscription plans, cart , payments login/logout }] ,,,,,,,[3.{footer- having different coluns for different list of site -links for move including contact-us about-us features     ,app download section having app and web download    , payment methods }],,,,,,[4. stcky-thin  left to right slow moving bar {with different options which have link to other pages}].        .............. <<That is my expectaion . if you cant buid it at once start one by one.  confirm me that you understood, and if you find it difficult to understand logic behind to how to divide screeen fo diffrent parts take my help i will specify for example - how many rows we divide our screen into - then how many rowns  or columns or both we need for each row - further division . then make components which- will be linked to backend>>
+
+
+
+
+
+
+
+
+
+ composure project dependencies  
+
+
+ composer init
+
+
+  Welcome to the Composer config generator
+
+
+
+This command will guide you through creating your composer.json config.
+
+Package name (<vendor>/<name>) [asus/php-project1apex-planet]: apexplanet/blog-platform
+Description []: A high-performance, fully responsive, secure, scalable, and feature-rich PHP blog platform with modern UI/UX, built for fast loading, future-ready extensibility, and industry-grade deployment for high-value clients.
+Author [firstname Y <mail@gmail.com>, n to skip]: firstname Y <mail@gmail.com>
+Minimum Stability []: stable
+Package Type (e.g. library, project, metapackage, composer-plugin) []: project
+License []: MIT
+
+Define your dependencies.
+
+Would you like to define your dependencies (require) interactively [yes]? yes
+Search for a package: vlucas/phpdotenv
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^5.6 for vlucas/phpdotenv
+Search for a package: phpmailer/phpmailer
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^6.10 for phpmailer/phpmailer
+Search for a package: symfony/var-dumper
+Enter the version constraint to require (or leave blank to use the latest version):
+Cannot use symfony/var-dumper's latest version v7.3.1 as it requires php >=8.2 which is not satisfied by your platform.
+Using version ^6.4 for symfony/var-dumper
+Search for a package: nesbot/carbon
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^3.10 for nesbot/carbon
+Search for a package:
+Would you like to define your dev dependencies (require-dev) interactively [yes]? Yes
+Search for a package: squizlabs/php_codesniffer
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^3.13 for squizlabs/php_codesniffer
+Search for a package: phpstan/phpstan
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^2.1 for phpstan/phpstan
+Search for a package: friendsofphp/php-cs-fixer
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^3.78 for friendsofphp/php-cs-fixer
+Search for a package: roave/security-advisories
+Enter the version constraint to require (or leave blank to use the latest version): dev-latest
+Search for a package: firebase/php-jwt
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^6.11 for firebase/php-jwt
+Search for a package: malkusch/lock
+Enter the version constraint to require (or leave blank to use the latest version):
+Using version ^3.0 for malkusch/lock
+Search for a package:
+Add PSR-4 autoload mapping? Maps namespace "Apexplanet\BlogPlatform" to the entered relative path. [src/, n to skip]: src/
+
+{
+    "name": "apexplanet/blog-platform",
+    "description": "A high-performance, fully responsive, secure, scalable, and feature-rich PHP blog platform with modern UI/UX, built for fast loading, future-ready extensibility, and industry-grade deployment for high-value clients.",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.10",
+        "symfony/var-dumper": "^6.4",
+        "nesbot/carbon": "^3.10"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.13",
+        "phpstan/phpstan": "^2.1",
+        "friendsofphp/php-cs-fixer": "^3.78",
+        "roave/security-advisories": "dev-latest",
+        "firebase/php-jwt": "^6.11",
+        "malkusch/lock": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Apexplanet\\BlogPlatform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "firstname Y",
+            "email": "mail@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
+
+Do you confirm generation [yes]? yes
+Would you like the vendor directory added to your .gitignore [yes]? yes
+Would you like to install dependencies now [yes]? yes
+Loading composer repositories with package information
