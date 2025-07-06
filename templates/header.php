@@ -40,7 +40,7 @@
             <li><a href="#" class="hover:text-blue-600">Popular Tags</a></li>
           </ul>
         </div>
-      </div>
+      </div>   
 
       <!-- Language Selector -->
       <div class="relative">
@@ -56,6 +56,25 @@
       </div>
     </div>
 
+    <!-- New Dropdowns: Services, Tools, Explore -->
+      <template x-for="(menu, index) in [{ label: 'Services', icon: '🔧', options: ['SEO Services', 'Write for Us', 'Consulting'] }, { label: 'Tools', icon: '🛠', options: ['Post Builder', 'Analytics', 'Image Optimizer'] }, { label: 'Explore', icon: '🌐', options: ['Most Popular', 'Trending', 'AI Tools'] }]">
+        <div class="relative group" :class="'group-' + menu.label" @mouseenter="window['show' + menu.label] = true" @mouseleave="window['show' + menu.label] = false">
+          <button class="flex items-center gap-1 text-sm text-gray-700 hover:text-blue-600">
+            <span x-text="menu.icon"></span>
+            <span x-text="menu.label"></span>
+          </button>
+          <div x-show="window['show' + menu.label]" class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg p-3 z-40" @mouseenter="window['show' + menu.label] = true" @mouseleave="window['show' + menu.label] = false">
+            <template x-for="option in menu.options">
+              <a href="#" class="block px-2 py-1 text-sm text-gray-700 hover:text-blue-600 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/></svg>
+                <span x-text="option"></span>
+              </a>
+            </template>
+          </div>
+        </div>
+      </template>
+
+
     <!-- Center: Expandable Search Bar -->
     <div class="relative flex-1 mx-6">
       <input
@@ -64,6 +83,9 @@
         class="transition-all w-36 hover:w-full focus:w-full duration-300 ease-in-out px-4 py-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
       />
     </div>
+
+    
+
 
     <!-- Right: Contact, Cart, Account, Dark mode -->
     <div class="flex items-center gap-4">
@@ -139,3 +161,6 @@
 
 </body>
 </html>
+
+
+

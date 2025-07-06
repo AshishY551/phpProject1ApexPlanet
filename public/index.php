@@ -6,6 +6,10 @@
 // (1) Include required backend setup files
 require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../includes/session.php';
+
+//
+$viewFile = __DIR__ . '/../views/home.php';
+include_once __DIR__ . '/../templates/layout.php';
 // etc...
 
 // (2) Start HTML
