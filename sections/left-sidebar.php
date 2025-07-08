@@ -16,7 +16,7 @@
 <body class="bg-gray-100 text-gray-800">
 
 
-
+    <!-- Althogh responsive code for desktop (responsive) but mobile and  tablet  is also there seperately but do to some issues it is not working properly . I will adress it later -->
     <!-- sections/left-sidebar.php -->
     <div x-data="{ openMobile: false , openTablet: null }" class="z-40">
         <div>
@@ -285,7 +285,6 @@
 
 
         </div>
-
 
 
 
