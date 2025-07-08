@@ -12,6 +12,8 @@ $dbHost = $_ENV['DB_HOST'] ?? 'localhost';
 $dbName = $_ENV['DB_NAME'] ?? 'blog';
 $dbUser = $_ENV['DB_USER'] ?? 'root';
 $dbPass = $_ENV['DB_PASS'] ?? '';
+// $charset = 'utf8mb4'; shoud i add?
+
 
 try {
     // ✅ Secure PDO connection with UTF-8 and safe defaults
@@ -30,5 +32,3 @@ try {
     error_log("🔒 PDO DB connection error: " . $e->getMessage());
     die("Database connection failed. Please try again later.");
 }
-?>
-
