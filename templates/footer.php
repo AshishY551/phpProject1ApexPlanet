@@ -53,6 +53,8 @@
             </div>
 
             <!-- Column 5 -->
+            <!-- <img src="/assets/images/app-store-badge.png" alt="Get it on Google Play" class="h-12"> -->
+
             <div>
                 <h4 class="text-xs text-gray-400 font-semibold mb-3">Explore More:</h4>
                 <!-- App Download Section -->
@@ -60,10 +62,10 @@
                     <h4 class="text-white font-semibold mb-3">Download Our App</h4>
                     <div class="flex space-x-4">
                         <a href="#" target="_blank">
-                            <img src="/assets/images/google-play-badge.png" alt="Get it on Google Play" class="h-12">
+                            <img src="D:\PhpApexPlanet\WebProjects\myproject\phpProject1ApexPlanet\public\assets\images\app-download\app-store-badge.png" alt="Get it on Google Play" class="h-12">
                         </a>
                         <a href="#" target="_blank">
-                            <img src="/assets/images/app-store-badge.png" alt="Download on the App Store" class="h-12">
+                            <img src="/assets/images/app-download/app-store-badge.png" alt="Download on the App Store" class="h-12">
                         </a>
                     </div>
                 </div>
