@@ -13,14 +13,14 @@
 
 </head>
 
-<body class=" bg-gray-100 text-gray-800">
+<body class=" bg-gray-100 text-gray-800"> -->
 
 
     <!-- In last commit, Althogh responsive code for desktop (responsive and woking) whereas responsive code for mobile and  tablet  is also there seperately but due to some issues it is not working properly . I will update it later."
 [main 5c43ed5] In last commit, Althogh responsive code for desktop (responsive and woking) whereas responsive code for mobile and  tablet  is also there seperately but due to some issues it is
  not working properly . I will update it later.
  -->
-    <!-- sections/left-sidebar.php -->
+    <!-- sections/left-sidebar.php-->
     <div x-data="{ openMobile: false , openTablet: null }" class="z-40">
         <div>
             <!-- ✅ MOBILE ONLY: Full-screen overlay category list -->
@@ -289,7 +289,7 @@
 
         </div>
 
-
+    </div>
 
 
 

@@ -23,7 +23,7 @@
 
       <!-- Left: Logo + Menu -->
       <div class="flex items-center mx-0 gap-6">
-        <img src="/public/assets/images/logo.png" alt="Logo" class="w-8 h-8">
+        <img src="/public/assets/images/logo.jpeg" alt="Logo" class="w-8 h-8">
         <span class="font-bold text-xl text-blue-600">ApexPlanet</span>
 
 

@@ -1,4 +1,5 @@
 <?php
+
 // templates/layout.php
 ?>
 <!DOCTYPE html>
@@ -41,15 +42,20 @@
     </div>
 
     <!-- ✅ Main content: this should be dynamically included -->
-    <main class="flex-1 mt-16 px-4 py-4 overflow-y-auto">
+    <main class="flex-1 mt-1 px-8 py-4 overflow-y-auto">
       <?php
-      // Load a specific view (set dynamically from index.php or router.php)
+      // Load a specific view (set dynamically from index.php or router.php
       if (isset($viewFile)) {
         include $viewFile;
       } else {
         echo "<p class='text-center text-gray-500'>No view loaded.</p>";
       }
+
+
       ?>
+
+
+
     </main>
 
     <!-- ✅ Sticky Right Sidebar -->
