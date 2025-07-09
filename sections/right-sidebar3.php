@@ -3,6 +3,7 @@
 <div
     x-data="rightSidebar()"
     class="relative z-50"
+    :class="{ 'w-16': open, 'w-12': !open }"
     @keydown.window.escape="active = null">
     <!-- 🌐 Floating Open Button (Mobile Only) -->
     <button
@@ -14,6 +15,7 @@
     </button>
 
     <!-- 📱 Full Panel for Mobile -->
+
     <div
         x-show="mobileOpen"
         x-transition:enter="transition ease-out duration-300"
@@ -41,7 +43,7 @@
         </div>
     </div>
 
-    <!-- 🖥️ Desktop Sidebar -->
+    <!-- 🔤️ Desktop Sidebar -->
     <div class="hidden md:flex fixed top-16 right-0 h-[calc(100vh-4rem)] z-40">
         <!-- Icon bar -->
         <div class="bg-gray-900 text-white flex flex-col justify-between py-4 px-2 w-14 transition-all duration-300 ease-in-out shadow-lg">
