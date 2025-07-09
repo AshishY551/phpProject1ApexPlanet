@@ -54,6 +54,9 @@
 
       ?>
 
+      <!-- ✅ Optional Footer -->
+      <?php include_once __DIR__ . '/footer.php'; ?>
+
 
 
     </main>
