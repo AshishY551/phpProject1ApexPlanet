@@ -94,7 +94,10 @@ include_once __DIR__ . '/../templates/layout.php';
 
 
 
-Problem Was also in view rendering section of layout file and then i dynamically added then middle content which was previously directly added in index file . And also Index file is updated and minimized to least lines of code nedded for working.
+1.Middle content is now correctly loaded dynamically from the view system, instead of being directly inserted in index. Also simplified index file to contain only essential logic for cleaner structure.
+2.View logic is implemeted correctly to load middle contet in a dynemic way.
+3.left-sidebar causing issues to load for middle content corected now.
+4. middle content is upgraded
 
 
 Fixed layout bug causing main content not to load . Identified and resolved an issue where the middle content section was not displaying. The problem was due to a missing closing div in the left sidebar, which broke the overall HTML structure. Verified that the main content now loads correctly within the layout, and updated the middle content section for better clarity and future expansion.

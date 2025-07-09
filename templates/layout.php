@@ -63,8 +63,8 @@
       [?php] include __DIR__ . '/../sections/right-sidebar.php'; [?]
     </aside> -->
     <!-- ✅ Sticky Right Sidebar (1/6 of screen width on xl and up) -->
-    <div class="hidden xl:block w-1/6 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto border-l border-gray-200 bg-white z-30">
-      <?php include __DIR__ . '/../sections/right-sidebar.php'; ?>
+    <div class="hidden xl:block w-1/7 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto border-l border-gray-200 bg-white z-30">
+      <?php include __DIR__ . '/../sections/right-sidebar3.php'; ?>
     </div>
 
   </div>
