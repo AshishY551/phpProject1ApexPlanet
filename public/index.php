@@ -19,6 +19,7 @@ include_once __DIR__ . '/../templates/layout.php';
 <!-- html code -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,12 +32,21 @@ include_once __DIR__ . '/../templates/layout.php';
     .fade-in {
       animation: fadeIn 0.8s ease-in-out;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
   <!-- ✅ INCLUDE THE HEADER HERE -->
   <?php include_once __DIR__ . '/../templates/header.php'; ?>
@@ -79,4 +89,5 @@ include_once __DIR__ . '/../templates/layout.php';
     &copy; 2025 ApexPlanet Blog Platform. All rights reserved.
   </footer>
 </body>
+
 </html>

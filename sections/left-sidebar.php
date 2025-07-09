@@ -13,16 +13,19 @@
 
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class=" bg-gray-100 text-gray-800">
 
 
-    <!-- Althogh responsive code for desktop (responsive) but mobile and  tablet  is also there seperately but do to some issues it is not working properly . I will adress it later -->
+    <!-- In last commit, Althogh responsive code for desktop (responsive and woking) whereas responsive code for mobile and  tablet  is also there seperately but due to some issues it is not working properly . I will update it later."
+[main 5c43ed5] In last commit, Althogh responsive code for desktop (responsive and woking) whereas responsive code for mobile and  tablet  is also there seperately but due to some issues it is
+ not working properly . I will update it later.
+ -->
     <!-- sections/left-sidebar.php -->
     <div x-data="{ openMobile: false , openTablet: null }" class="z-40">
         <div>
             <!-- ✅ MOBILE ONLY: Full-screen overlay category list -->
             <!-- ✅ MOBILE-ONLY CATEGORY DROPDOWN PANEL -->
-            <div class="lg:hidden fixed top-16 left-0 w-full z-50">
+            <div class="block md:hidden lg:hidden fixed top-16 left-0 w-full z-50">
 
                 <!-- Toggle Button -->
                 <div class="bg-white border-b border-gray-200 shadow px-4 py-2">

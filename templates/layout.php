@@ -31,12 +31,17 @@
   <div class="flex flex-row min-h-screen ">
 
     <!-- ✅ Sticky Left Sidebar -->
-    <aside class="w-64 hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-gray-200 bg-white z-30">
+    <!-- <aside class="w-64 hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-r border-gray-200 bg-white z-30">
+      [php] include __DIR__ . '/../sections/left-sidebar.php'; [/php]
+    </aside> -->
+    <!-- ✅ Full Left Sidebar Logic (handles mobile, tablet, desktop) -->
+    <!-- ✅ Sticky Left Sidebar (1/6 of screen width on lg and up) -->
+    <div class="hidden lg:block w-1/6 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto border-r border-gray-200 bg-white z-30">
       <?php include __DIR__ . '/../sections/left-sidebar.php'; ?>
-    </aside>
+    </div>
 
     <!-- ✅ Main content: this should be dynamically included -->
-    <main class="mt-16 px-4">
+    <main class="flex-1 mt-16 px-4 py-4 overflow-y-auto">
       <?php
       // Load a specific view (set dynamically from index.php or router.php)
       if (isset($viewFile)) {
@@ -48,9 +53,13 @@
     </main>
 
     <!-- ✅ Sticky Right Sidebar -->
-    <aside class="w-64 hidden xl:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-l border-gray-200 bg-white z-30">
+    <!-- <aside class="w-64 hidden xl:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-l border-gray-200 bg-white z-30">
+      [?php] include __DIR__ . '/../sections/right-sidebar.php'; [?]
+    </aside> -->
+    <!-- ✅ Sticky Right Sidebar (1/6 of screen width on xl and up) -->
+    <div class="hidden xl:block w-1/6 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto border-l border-gray-200 bg-white z-30">
       <?php include __DIR__ . '/../sections/right-sidebar.php'; ?>
-    </aside>
+    </div>
 
   </div>
 
