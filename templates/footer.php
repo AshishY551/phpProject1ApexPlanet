@@ -62,10 +62,10 @@
                     <h4 class="text-white font-semibold mb-3">Download Our App</h4>
                     <div class="flex space-x-4">
                         <a href="#" target="_blank">
-                            <img src="D:\PhpApexPlanet\WebProjects\myproject\phpProject1ApexPlanet\public\assets\images\app-download\app-store-badge.png" alt="Get it on Google Play" class="h-12">
+                            <img src="/public/assets/images/app-download/play-store-badge.png" alt="Get it on Google Play" class="h-12">
                         </a>
                         <a href="#" target="_blank">
-                            <img src="/assets/images/app-download/app-store-badge.png" alt="Download on the App Store" class="h-12">
+                            <img src="/public/assets/images/app-download/app-store-badge.png" alt="Download on the App Store" class="h-12">
                         </a>
                     </div>
                 </div>
@@ -84,14 +84,14 @@
             <div class="mt-8">
                 <h4 class="text-white font-semibold mb-3">Payment Methods</h4>
                 <div class="flex flex-wrap gap-4 items-center">
-                    <img src="/assets/images/payments/visa.png" alt="Visa" class="h-6">
-                    <img src="/assets/images/payments/mastercard.png" alt="MasterCard" class="h-6">
-                    <img src="/assets/images/payments/upi.png" alt="UPI" class="h-6">
-                    <img src="/assets/images/payments/phonepe.png" alt="PhonePe" class="h-6">
-                    <img src="/assets/images/payments/paytm.png" alt="Paytm" class="h-6">
-                    <img src="/assets/images/payments/rupay.png" alt="RuPay" class="h-6">
-                    <img src="/assets/images/payments/netbanking.png" alt="NetBanking" class="h-6">
-                    <img src="/assets/images/payments/cod.png" alt="Cash on Delivery" class="h-6">
+                    <img src="/public/assets/images/payments/Visa_Brandmark_White_RGB_2021.png" alt="Visa" class="h-6">
+                    <img src="/public/assets/images/payments/mastercard.png" alt="MasterCard" class="h-6">
+                    <img src="/public/assets/images/payments/upi.png" alt="UPI" class="h-6">
+                    <img src="/public/assets/images/payments/phonepe.png" alt="PhonePe" class="h-6">
+                    <img src="/public/assets/images/payments/paytm.png" alt="Paytm" class="h-6">
+                    <img src="/public/assets/images/payments/rupay.png" alt="RuPay" class="h-6">
+                    <img src="/public/assets/images/payments/netbanking.png" alt="NetBanking" class="h-6">
+                    <img src="/public/assets/images/payments/cod.png" alt="Cash on Delivery" class="h-6">
                 </div>
             </div>
 
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Bottom bar -->
-        <div class="flex flex-wrap items-center justify-between text-xs text-gray-400 py-5">
+        <div class="flex flex-wrap items-center justify-between text-xs text-white-400 py-5">
             <div class="flex flex-wrap gap-6 items-center">
                 <span class="flex items-center gap-1"><i class="fas fa-store"></i> Become a Seller</span>
                 <span class="flex items-center gap-1"><i class="fas fa-bullhorn"></i> Advertise</span>
