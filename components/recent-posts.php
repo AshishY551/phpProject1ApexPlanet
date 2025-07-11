@@ -34,3 +34,12 @@
         <?php endfor; ?>
     </div>
 </div>
+
+
+<!-- feat: Added Best Posts and Recent Posts sections to middle-content layout
+
+- Integrated post-list.php for displaying best posts with search and sort UI
+- Created recent-posts.php to showcase newly added content with category filter
+- Included placeholder Edit/Delete buttons for future backend integration
+- Ensured responsive layout, Tailwind styling, and hover animations
+- Updated middle-content.php to include both components in page flow -->
