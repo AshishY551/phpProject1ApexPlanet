@@ -1,7 +1,7 @@
 <!-- components/post-list.php -->
 <div class="w-full px-4 py-6 bg-white dark:bg-gray-900 shadow rounded-2xl">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-3 md:mb-0">🔥 Your Best Posts</h2>
+        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-3 md:mb-0">🔥 Posts List</h2>
 
         <div class="flex gap-2">
             <!-- Search -->
