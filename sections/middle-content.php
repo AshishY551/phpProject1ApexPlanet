@@ -80,7 +80,23 @@
         <!-- ✅ More blocks below (to be added) -->
 
     </section>
+    <!--3.3 sections/middle-content.php -->
+    <section id="middle-content" class="w-full flex flex-col gap-8 px-4 md:px-6 lg:px-8 py-6">
 
+
+
+        <!-- 3️⃣ ✅ Featured Posts Section (NEW) -->
+        <?php include_once __DIR__ . '/../components/featured-slider.php'; ?>
+
+        <!-- 4️⃣ Next Sections (Comments, News, Newsletter, etc.) -->
+        <?php // include_once __DIR__ . '/../components/comments-section.php'; 
+        ?>
+        <?php // include_once __DIR__ . '/../components/news-section.php'; 
+        ?>
+        <?php // include_once __DIR__ . '/../components/newsletter-form.php'; 
+        ?>
+
+    </section>
 
 
 
