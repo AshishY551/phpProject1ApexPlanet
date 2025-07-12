@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <!-- 2nd search+sort -->
+    <!-- 2.1 part 1 2nd search+sort -->
     <!-- 🎛 Best Posts Filter and Sort Controls -->
     <div id="best-posts-controls" class="flex flex-wrap justify-between items-center mb-4 px-2 sm:px-4 py-3 bg-white dark:bg-gray-900 shadow rounded-xl border border-gray-200 dark:border-gray-700">
 
@@ -81,6 +81,17 @@
         ?>
     </div>
 
+    <!--2.1 part 2 💡 JS Placeholder for dynamic filter/sort (Future AJAX) -->
+    <script>
+        document.getElementById('category-filter').addEventListener('change', function() {
+            alert("Category selected: " + this.value); // Replace with backend logic
+        });
+
+        document.getElementById('sort-by').addEventListener('change', function() {
+            alert("Sorting by: " + this.value); // Replace with backend logic
+        });
+    </script>
+
     gc_collect_cycles
 
     <div>
@@ -103,6 +114,8 @@
             Load More
         </button>
     </div>
+
+
 
 
 </section>
