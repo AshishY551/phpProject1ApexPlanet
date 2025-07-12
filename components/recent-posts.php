@@ -25,7 +25,7 @@
             <?php
             // Placeholder: Loop through recent posts from backend
             for ($i = 1; $i <= 4; $i++) {
-                include __DIR__ . '/../../components/post-card.php';
+                include __DIR__ . '/post-card.php';
             }
             ?>
         </div>
