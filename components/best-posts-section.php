@@ -39,6 +39,35 @@
         </div>
     </div>
 
+    <!-- 2nd search+sort -->
+    <!-- 🎛 Best Posts Filter and Sort Controls -->
+    <div id="best-posts-controls" class="flex flex-wrap justify-between items-center mb-4 px-2 sm:px-4 py-3 bg-white dark:bg-gray-900 shadow rounded-xl border border-gray-200 dark:border-gray-700">
+
+        <!-- 🔍 Category Filter -->
+        <div class="flex items-center space-x-2">
+            <label for="category-filter" class="text-sm font-medium text-gray-700 dark:text-gray-300">Category:</label>
+            <select id="category-filter" name="category" class="text-sm bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="all">All</option>
+                <option value="tech">Tech</option>
+                <option value="design">Design</option>
+                <option value="business">Business</option>
+                <option value="lifestyle">Lifestyle</option>
+            </select>
+        </div>
+
+        <!-- ⬇️ Sort By -->
+        <div class="flex items-center space-x-2 mt-3 sm:mt-0">
+            <label for="sort-by" class="text-sm font-medium text-gray-700 dark:text-gray-300">Sort by:</label>
+            <select id="sort-by" name="sort" class="text-sm bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="popular">Most Popular</option>
+                <option value="recent">Most Recent</option>
+                <option value="views">Most Viewed</option>
+                <option value="comments">Most Commented</option>
+            </select>
+        </div>
+    </div>
+
+
 
 
     <!-- 🧱 Posts Grid -->
