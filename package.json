@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "swiper": "^11.2.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6"
+  },
+  "name": "phpproject1apexplanet",
+  "version": "1.0.0",
+  "description": "Scalable PHP-MySQL project environment for ApexPlanet with Git-based workflow and local server integration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-Aypratap1:AshishY551/phpProject1ApexPlanet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
