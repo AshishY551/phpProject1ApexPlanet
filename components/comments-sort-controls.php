@@ -1,0 +1,1 @@
+$sortOptions = $_GET['sort'] ?? []; // This will be an array of selected checkboxes
