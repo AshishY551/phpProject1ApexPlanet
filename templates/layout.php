@@ -120,6 +120,28 @@
 
   <!-- script 2 for news section Loading -->
   <script>
+    let newsOffset = <?= count($newsPosts) ?>;
+
+    document.getElementById('loadMoreNews').addEventListener('click', () => {
+      const btn = event.target;
+      btn.textContent = "⏳ Loading...";
+
+      fetch(`/api/get-news.php?start=` + newsOffset)
+        .then(res => res.text())
+        .then(html => {
+          document.querySelector('#news-section .grid').insertAdjacentHTML('beforeend', html);
+          newsOffset += 3;
+          btn.textContent = "🔄 Load More";
+        })
+        .catch(() => {
+          btn.textContent = "❌ Failed. Try Again";
+        });
+    });
+  </script>
+
+
+
+  <!-- update upper codecheck above <script>
     let start = 6; // initial news shown
     const loadBtn = document.getElementById('loadMoreNews');
     const grid = document.getElementById('news-grid');
@@ -137,7 +159,7 @@
           loadBtn.innerText = "❌ Failed. Try Again";
         });
     });
-  </script>
+  </script> -->
 
 
 

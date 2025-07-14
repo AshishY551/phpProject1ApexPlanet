@@ -1,10 +1,9 @@
-feat: Add advanced modular comment filter bar component with search, tag, and multi-sort options
 
-- Created components/comments-filter-bar.php for reusable comment filtering UI
-- Included multi-checkbox sort options: Recent, Liked, Replied, Top Rated
-- Added tag/category selector with emoji-based labels (e.g., Funny, Support)
-- Integrated accessible search bar with dark mode and icon support
-- Structured for optional GET method filter form submission
-- Backend-ready variable mapping: $_GET['search'], $_GET['sort'], $_GET['tag']
-- Prepared for scalable integration with modules/comments/read.php
+feat: Build advanced dynamic News Section
 
+- Added animated "Breaking News" banner with Tailwind transitions
+- Included author, date, source metadata per news card
+- Integrated Load More functionality using AJAX (no page reload)
+- Created reusable component: components/news-section.php
+- Built dynamic handler: api/get-news.php
+- JS fetch logic added in home layout for dynamic post loading

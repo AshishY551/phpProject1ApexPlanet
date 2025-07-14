@@ -6,7 +6,13 @@ $categories = ['All Categories', 'Technology', 'World', 'Science', 'Economy', 'S
 $currentCategory = $_GET['category'] ?? '';
 ?>
 
-<div class="w-full bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
+<div id="news-section" class="w-full bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md">
+
+    <!-- 🔔 Breaking News Banner -->
+    <div class="mb-4 px-4 py-2 bg-gradient-to-r from-red-500 to-yellow-400 text-white font-bold text-center animate-pulse rounded">
+        🔥 Breaking News: Stay updated with the latest stories!
+    </div>
+
     <!-- Header + Filters -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-800 dark:text-white">📰 Latest News</h2>
