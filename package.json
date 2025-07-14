@@ -3,6 +3,7 @@
     "swiper": "^11.2.10"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
@@ -13,7 +14,8 @@
   "description": "Scalable PHP-MySQL project environment for ApexPlanet with Git-based workflow and local server integration.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/input.css -o ./public/assets/css/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -23,3 +25,5 @@
   "author": "",
   "license": "ISC"
 }
+
+

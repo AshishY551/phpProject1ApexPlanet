@@ -1,3 +1,5 @@
 .env
 
+public/assets/css/output.css
+
 /vendor/
