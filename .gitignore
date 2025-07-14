@@ -1,5 +1,17 @@
+# Environment
 .env
 
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
 public/assets/css/output.css
 
-/vendor/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tailwind cache (if any)
+.tailwind/

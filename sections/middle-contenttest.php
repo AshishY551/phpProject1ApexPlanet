@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>

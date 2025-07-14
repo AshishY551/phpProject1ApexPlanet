@@ -233,9 +233,13 @@
             </div>
         </div>
 
-        <!-- 4️⃣ Comments Section -->
+        <!--2.1 4️⃣ Comments Section -->
+        <?php include __DIR__ . '/../components/comments-section.php'; ?>
+
+
+        <!--1.1 4️⃣ Comments Section -->
         <div id="comments-section" class="space-y-4">
-            <h2 class="text-2xl font-bold">💬 Comments</h2>
+            <h2 class="text-2xl font-bold">💬 Other old classic Comments</h2>
             <!-- 🔁 Placeholder loop -->
             <?php for ($i = 1; $i <= 2; $i++): ?>
                 <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
