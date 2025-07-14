@@ -79,8 +79,22 @@
         <!-- Best Posts -->
         <?php include_once __DIR__ . '/../components/post-list.php'; ?>
 
-        <!-- Recent Posts -->
+        <!--2.1 Recent Posts -->
         <?php include_once __DIR__ . '/../components/recent-posts.php'; ?>
+
+        <!--1.1 2️⃣ Recent Posts Section -->
+        <div id="recent-posts" class="space-y-4">
+            <h2 class="text-2xl font-bold">🕘 Classic Recent Posts</h2>
+            <div class="space-y-3">
+                <!-- 🔁 Placeholder -->
+                <?php for ($i = 1; $i <= 3; $i++): ?>
+                    <div class="p-4 bg-white rounded shadow hover:bg-gray-50 transition">
+                        <h4 class="font-semibold">Recent Post Title <?= $i ?></h4>
+                        <p class="text-sm text-gray-500">Published on <?= date('Y-m-d') ?> · Author Name</p>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </div>
 
         <!-- ✅ More blocks below (to be added) -->
 
@@ -192,19 +206,7 @@
             </div>
         </div>
 
-        <!-- 2️⃣ Recent Posts Section -->
-        <div id="recent-posts" class="space-y-4">
-            <h2 class="text-2xl font-bold">🕘 Recent Posts</h2>
-            <div class="space-y-3">
-                <!-- 🔁 Placeholder -->
-                <?php for ($i = 1; $i <= 3; $i++): ?>
-                    <div class="p-4 bg-white rounded shadow hover:bg-gray-50 transition">
-                        <h4 class="font-semibold">Recent Post Title <?= $i ?></h4>
-                        <p class="text-sm text-gray-500">Published on <?= date('Y-m-d') ?> · Author Name</p>
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
+
 
         <!-- 3️⃣ Featured Posts with Selectors -->
         <div id="featured-posts" class="space-y-4">
@@ -253,21 +255,9 @@
             <?php endfor; ?>
         </div>
 
-        <!-- 5️⃣ News Section -->
-        <div id="news-section" class="space-y-4">
-            <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-bold">📰 News</h2>
-                <input type="text" placeholder="Search News..." class="input input-bordered px-3 py-1">
-            </div>
-            <div class="space-y-2">
-                <?php for ($i = 1; $i <= 3; $i++): ?>
-                    <div class="bg-white p-3 rounded shadow hover:shadow-md transition-all">
-                        <h4 class="font-semibold">Latest News Headline <?= $i ?></h4>
-                        <p class="text-sm text-gray-600">Brief snippet or summary of the news item here.</p>
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
+        <!--2.1 5️⃣ News Section -->
+        <?php include __DIR__ . '/../components/news-section.php'; ?>
+
 
         <!-- 6️⃣ Email Subscription Section -->
         <!-- <div id="newsletter-section" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-6 rounded-lg mt-10">

@@ -1,30 +1,10 @@
-feat: Build advanced, interactive, scalable comment section with modern UI and backend readiness
+feat: Add advanced modular comment filter bar component with search, tag, and multi-sort options
 
-💬 Designed a fully featured comment system:
-- Responsive 2-row × 4-column comment layout with Tailwind Grid
-- Backend integration-ready comment submission form
-- Animated transitions and hover effects for a modern UX
+- Created components/comments-filter-bar.php for reusable comment filtering UI
+- Included multi-checkbox sort options: Recent, Liked, Replied, Top Rated
+- Added tag/category selector with emoji-based labels (e.g., Funny, Support)
+- Integrated accessible search bar with dark mode and icon support
+- Structured for optional GET method filter form submission
+- Backend-ready variable mapping: $_GET['search'], $_GET['sort'], $_GET['tag']
+- Prepared for scalable integration with modules/comments/read.php
 
-🛠 Enhanced comment actions with advanced interactivity:
-- Like 👍 / Dislike 👎 buttons with counters
-- Emoji selector placeholder (future plugin integration possible)
-- Reply 💬 and Pin 📌 actions on each comment card
-- Built using Font Awesome v6 icons
-
-🎛 Added advanced filtering and sorting toolbar:
-- Multi-select filter options (Recent, Most Liked, Most Replied, etc.)
-- Future-ready dropdown selector for comment category or tag
-- Integrated search bar for filtering comments by content or keyword
-
-🔄 Planned dynamic loading and routing:
-- Added "Load More" or "Go to Comments Page" CTA at the bottom
-- Future support for AJAX-based loading or full-page redirection
-
-📁 Placement & Structure:
-- Component stored in `components/comments-section.php`
-- Clean modular structure, reusable across `post.php`, `home.php`, or standalone
-
-✅ Result:
-- Scalable and animated comment UI
-- Fully prepared for backend logic
-- Industry-level structure, responsive design, and interactive elements

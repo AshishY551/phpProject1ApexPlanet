@@ -118,6 +118,29 @@
     }
   </script>
 
+  <!-- script 2 for news section Loading -->
+  <script>
+    let start = 6; // initial news shown
+    const loadBtn = document.getElementById('loadMoreNews');
+    const grid = document.getElementById('news-grid');
+
+    loadBtn.addEventListener('click', () => {
+      loadBtn.innerText = "⏳ Loading...";
+      fetch(`/api/get-news.php?start=${start}`)
+        .then(res => res.text())
+        .then(data => {
+          grid.insertAdjacentHTML('beforeend', data);
+          start += 3;
+          loadBtn.innerText = "🔄 Load More";
+        })
+        .catch(() => {
+          loadBtn.innerText = "❌ Failed. Try Again";
+        });
+    });
+  </script>
+
+
+
 
 
 
