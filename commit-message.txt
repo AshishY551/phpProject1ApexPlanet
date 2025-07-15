@@ -1,9 +1,7 @@
+feat: Added dynamic animated header to middle content section
 
-feat: Upgrade News Section with AJAX and metadata
+- Introduced section-header.php as reusable component
+- Includes scroll navigation to Best Posts, Recent, Featured, Comments, and News sections
+- Added modern animations and responsive layout
+- Smooth scrolling enabled via JS
 
-- Added Breaking News banner with animated alert style
-- Enhanced news cards with author, date, and source metadata
-- Replaced static "Load More" with AJAX-based button
-- Created API endpoint: api/get-news.php for dynamic loading
-- JS fetch logic added to layout/home page
-- Retained original filtering and pin logic — now scalable and dynamic

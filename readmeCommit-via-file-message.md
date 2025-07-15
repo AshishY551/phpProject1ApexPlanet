@@ -1,5 +1,7 @@
 # 📝 Commiting via Message File in Git (`commit-message.txt`)
 
+🕒 **Created on:** July 14, 2025
+
 This guide documents how to write, reuse, and commit with a multi-line Git commit message using a text file — specifically `commit-message.txt`.
 
 ---
@@ -17,24 +19,29 @@ git commit -m "feat: Build advanced comment section...
 ```
 
 But it failed with errors like:
+
 ```
 syntax error near unexpected token `newline'
 error: pathspec ...
 ```
 
 Because:
+
 - `git commit -m` **only supports single-line messages**, unless you escape or wrap newlines manually.
 - Special characters like `:`, `-`, `"` or emoji may break the bash interpreter.
+
 ---
 
 ## ✅ Best Solution — Use a File to Commit
 
 ### 1. Create your message file using nano:
+
 ```bash
 nano commit-message.txt
 ```
 
 ### 2. Paste your commit message:
+
 ```text
 feat: Build advanced, interactive, scalable comment section with modern UI and backend readiness
 
@@ -69,12 +76,14 @@ feat: Build advanced, interactive, scalable comment section with modern UI and b
 ```
 
 ### 3. Save the file:
+
 - Press `Ctrl + O` → hit `Enter`
 - Press `Ctrl + X` to exit
 
 ---
 
 ### 4. Commit using the file:
+
 ```bash
 git commit -F commit-message.txt
 ```
@@ -85,10 +94,13 @@ git commit -F commit-message.txt
 
 - It is saved in the **current folder** where you ran `nano`.
 - Use `ls` to check:
+
 ```bash
 ls commit-message.txt
 ```
+
 - Or search for it:
+
 ```bash
 find . -name "commit-message.txt"
 ```
@@ -104,6 +116,7 @@ git commit -F commit-message.txt
 ```
 
 Or edit it each time:
+
 ```bash
 nano commit-message.txt
 ```
@@ -120,6 +133,7 @@ mv commit-message.txt .git-messages/comment-commit.txt
 ```
 
 Then use:
+
 ```bash
 git commit -F .git-messages/comment-commit.txt
 ```
@@ -128,15 +142,49 @@ git commit -F .git-messages/comment-commit.txt
 
 ## 📘 Summary
 
-| Task | Command |
-|------|---------|
-| Create message file | `nano commit-message.txt` |
-| Commit with file | `git commit -F commit-message.txt` |
-| Edit file again | `nano commit-message.txt` |
-| Move to custom folder | `mv commit-message.txt .git-messages/` |
+| Task                     | Command                                          |
+| ------------------------ | ------------------------------------------------ |
+| Create message file      | `nano commit-message.txt`                        |
+| Commit with file         | `git commit -F commit-message.txt`               |
+| Edit file again          | `nano commit-message.txt`                        |
+| Move to custom folder    | `mv commit-message.txt .git-messages/`           |
 | Reuse for future commits | `git commit -F .git-messages/comment-commit.txt` |
 
 ---
 
 🕒 **Created on:** July 14, 2025
 
+🕒 **Created on:** July 15, 2025
+
+$ cd /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet
+
+ASUS@DESKTOP-TS9N34R MINGW64 /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet (main)
+$ git init
+Reinitialized existing Git repository in D:/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet/.git/
+
+ASUS@DESKTOP-TS9N34R MINGW64 /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet (main)
+$ git add .
+warning: in the working copy of 'commit-message.txt', LF will be replaced by CRLF the next time Git touches it
+
+ASUS@DESKTOP-TS9N34R MINGW64 /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet (main)
+$ nano commit-message.txt
+
+ASUS@DESKTOP-TS9N34R MINGW64 /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet (main)
+$ git commit -F commit-message.txt
+[main 430d3bd] feat: Added dynamic animated header to middle content section
+3 files changed, 33 insertions(+), 9 deletions(-)
+create mode 100644 components/section-header.php
+
+ASUS@DESKTOP-TS9N34R MINGW64 /d/PhpApexPlanet/WebProjects/myproject/phpProject1ApexPlanet (main)
+$ git push
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.53 KiB | 313.00 KiB/s, done.
+Total 7 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github-Aypratap1:AshishY551/phpProject1ApexPlanet.git
+4638260..430d3bd main -> main
+
+🕒 **Created on:** July 15, 2025
