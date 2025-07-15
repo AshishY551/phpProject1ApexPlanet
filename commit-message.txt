@@ -1,9 +1,9 @@
 
-feat: Build advanced dynamic News Section
+feat: Upgrade News Section with AJAX and metadata
 
-- Added animated "Breaking News" banner with Tailwind transitions
-- Included author, date, source metadata per news card
-- Integrated Load More functionality using AJAX (no page reload)
-- Created reusable component: components/news-section.php
-- Built dynamic handler: api/get-news.php
-- JS fetch logic added in home layout for dynamic post loading
+- Added Breaking News banner with animated alert style
+- Enhanced news cards with author, date, and source metadata
+- Replaced static "Load More" with AJAX-based button
+- Created API endpoint: api/get-news.php for dynamic loading
+- JS fetch logic added to layout/home page
+- Retained original filtering and pin logic — now scalable and dynamic

@@ -3,11 +3,13 @@
 ?>
 
 <!-- 🧱 Section: Page Title -->
-<div class="p-4 md:p-8">
+<!-- <div class="p-4 md:p-8">
     <header class="bg-blue-600 p-4 py-5 shadow-md rounded-xl">
         <h1 class="text-3xl text-white text-center font-bold tracking-wide">My Blog</h1>
     </header>
-</div>
+</div> -->
+
+<?php include __DIR__ . '/../components/section-header.php'; ?>
 
 
 <!-- 🧱 Section: Main Content Grid -->
