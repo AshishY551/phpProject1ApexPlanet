@@ -5,3 +5,36 @@ feat: Added dynamic animated header to middle content section
 - Added modern animations and responsive layout
 - Smooth scrolling enabled via JS
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+feat: Integrated dynamic animations and behavior for section header component
+
+- Linked section-header.js for smooth scroll and interactivity
+- Scoped styles added via Tailwind classes; no separate CSS required
+- Ensured responsiveness and dark mode compatibility
+- Modularized JS and included conditionally for scalable use
+- Kept layout.php ready to support dynamic per-page script injection
+
