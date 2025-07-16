@@ -1,5 +1,43 @@
 <!-- components/posts-grid.php -->
 
+<!-- 🧠 Post Grid Header & Controls -->
+<div class="mb-6 space-y-4 md:space-y-0 md:flex md:items-center md:justify-between">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white flex items-center gap-2 animate-fade-in" aria-label="Your Posts Section">
+        <span class="text-blue-600 dark:text-blue-400 text-3xl">🧩</span>
+        <span>Your Posts</span>
+    </h2>
+
+
+    <!-- 🔍 Filter/Search UI -->
+    <div class="flex flex-wrap gap-3">
+
+        <!-- ✅ Multiple Checkbox Filters -->
+        <div class="flex gap-2 flex-wrap">
+            <?php
+            $filters = ['Tech', 'News', 'Tutorial', 'Design', 'Updates'];
+            foreach ($filters as $filter):
+            ?>
+                <label class="text-sm text-gray-700 dark:text-gray-300 flex items-center gap-1">
+                    <input type="checkbox" name="category[]" value="<?= strtolower($filter) ?>" class="form-checkbox text-blue-600 dark:bg-gray-800">
+                    <?= $filter ?>
+                </label>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- 🔄 Single Sort Selector -->
+        <select id="sort" class="px-3 py-2 border rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+            <option value="">Sort By</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="liked">Most Liked</option>
+        </select>
+
+        <!-- 🔎 Search Box -->
+        <input type="text" id="search" placeholder="Search..." class="px-3 py-2 border rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:text-white">
+    </div>
+</div>
+
+
 <section class="w-full bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md fade-in">
 
     <!-- 1. Header -->
