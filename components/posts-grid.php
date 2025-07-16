@@ -1,61 +1,62 @@
-<?php
-// Sample posts (replace with DB fetch in production)
-$posts = [
-    [
-        'title' => 'First post',
-        'desc' => 'Testing post creation working.',
-        'image' => '/public/uploads/posts/img_686a7a59a43091.65507314.jpeg',
-        'date' => 'July 5, 2025'
-    ],
-    [
-        'title' => 'Second Post',
-        'desc' => 'Another example post.',
-        'image' => '/public/assets/images/sample.jpg',
-        'date' => 'July 8, 2025'
-    ]
-];
-?>
+<!-- components/posts-grid.php -->
 
-<!-- 🔍 Live Search + Sort -->
-<div class="mt-12 flex flex-col sm:flex-row justify-between items-center gap-4">
-    <input type="text" placeholder="Search posts..." class="w-full sm:w-1/2 border px-3 py-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
-    <select class="border px-3 py-2 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
-        <option>Sort by</option>
-        <option>Newest</option>
-        <option>Oldest</option>
-        <option>Most Liked</option>
-    </select>
-</div>
+<section class="w-full bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md fade-in">
 
-<!-- 📰 Posts Grid -->
-<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 fade-in">
+    <!-- 1. Header -->
+    <header class="mb-6 text-center">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center justify-center gap-2">
+            📚 My Posts
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Manage and review your published posts</p>
+    </header>
 
-    <?php foreach ($posts as $post): ?>
-        <article class="bg-white dark:bg-gray-900 shadow-md rounded-2xl p-4 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
-            <img src="<?= $post['image'] ?>" alt="Post Image" class="rounded-md mb-4 w-full h-48 object-cover">
-            <div>
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-1"><?= htmlspecialchars($post['title']) ?></h2>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3"><?= htmlspecialchars($post['desc']) ?></p>
-            </div>
-            <div class="text-xs text-gray-400 dark:text-gray-500 mb-2"><?= $post['date'] ?></div>
-            <div class="flex justify-between mt-2 text-sm">
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Edit</a>
-                <a href="#" class="text-red-500 hover:text-red-700 font-medium">Delete</a>
-            </div>
-        </article>
-    <?php endforeach; ?>
+    <!-- 2. Filters + Sort + Search -->
+    <form method="GET" class="flex flex-wrap justify-between gap-4 items-center mb-8">
+        <!-- Multi-checkbox filter -->
+        <div class="flex flex-wrap gap-3">
+            <?php
+            $filters = ['Tech', 'Design', 'News', 'Tutorial'];
+            foreach ($filters as $filter):
+            ?>
+                <label class="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-300">
+                    <input type="checkbox" name="filter[]" value="<?= strtolower($filter) ?>"
+                        class="form-checkbox text-blue-600 dark:bg-gray-800">
+                    <span><?= $filter ?></span>
+                </label>
+            <?php endforeach; ?>
+        </div>
 
-    <!-- 🔧 Placeholder Card -->
-    <article class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 shadow rounded-2xl p-4 flex flex-col justify-center items-center opacity-40">
-        <p class="italic">Future post preview</p>
-        <div class="mt-2 text-xs">Reserved for later expansion</div>
-    </article>
+        <!-- Sort dropdown -->
+        <select name="sort" class="px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-xl dark:bg-gray-800 dark:text-white focus:outline-none">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="likes">Most Liked</option>
+        </select>
 
+        <!-- Search -->
+        <div class="relative w-full sm:w-auto">
+            <input type="text" name="search" placeholder="Search posts..."
+                class="pl-10 pr-4 py-2 w-full sm:w-64 border border-gray-300 dark:border-gray-700 rounded-xl dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 transition" />
+            <svg class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-300" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 1 0 3 10.5a7.5 7.5 0 0 0 13.65 6.15z" />
+            </svg>
+        </div>
+    </form>
+
+    <!-- 3. Posts Grid (2 rows × 4 columns) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <?php for ($i = 1; $i <= 8; $i++): ?>
+            <?php include __DIR__ . '/post-card.php'; ?>
+        <?php endfor; ?>
+    </div>
+
+    <!-- 4. Add New Post Button -->
+    <div class="flex justify-end mt-10">
+        <a href="/views/add-post.php"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
+            ➕ Add New Post
+        </a>
+    </div>
 </section>
-
-<!-- ➕ Add New Post Button -->
-<div class="flex justify-end mt-10">
-    <a href="/views/add-post.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition">
-        + Add New Post
-    </a>
-</div>
