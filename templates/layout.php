@@ -13,11 +13,20 @@
   <!-- ✅ Tailwind CSS (for development) -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+  <!-- Font Awesome (for icons like thumbs up/down) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Your custom CSS (must come last so it can override others if needed) -->
+
+  <link rel="stylesheet" href="/public/assets/css/components/posts-grid.css">
+
+
 
   <!-- ✅ Alpine.js (for dropdowns, panels) -->
   <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js  use only once"></script> -->
   <!-- Alpine.js (required for live search) -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
 
 </head>
@@ -164,6 +173,9 @@
 
 
 
+
+  <!-- layout.php or footer.php -->
+  <script src="/public/assets/js/components/posts-grid.js"></script>
 
 
 

@@ -1,0 +1,22 @@
+/* 🌀 Enhanced Fade-In Animation for Post Cards */
+
+@keyframes enhanced-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(10px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 👇 Utility Class to Trigger It */
+.animate-enhanced-fade-in {
+  animation: enhanced-fade-in 0.7s ease-out both;
+  will-change: opacity, transform;
+}

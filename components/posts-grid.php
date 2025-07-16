@@ -40,13 +40,18 @@
 
 <section class="w-full bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md fade-in">
 
-    <!-- 1. Header -->
-    <header class="mb-6 text-center">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center justify-center gap-2">
-            📚 My Posts
-        </h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Manage and review your published posts</p>
+    <!-- 1. Enhanced Header -->
+    <header class="mb-8 text-center animate-enhanced-fade-in">
+        <div class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+            <i class="fas fa-pen-nib text-xl"></i>
+            <h2 class="text-2xl font-bold tracking-wide">My Posts</h2>
+        </div>
+
+        <p class="mt-3 text-sm text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+            Review, edit or manage your contributions – stay creative and productive! ✨
+        </p>
     </header>
+
 
     <!-- 2. Filters + Sort + Search -->
     <form method="GET" class="flex flex-wrap justify-between gap-4 items-center mb-8">
