@@ -12,8 +12,13 @@
 <?php include __DIR__ . '/../components/section-header.php'; ?>
 
 
+
 <!-- 🧱 Section: Main Content Grid -->
 <main class="p-4 md:p-8">
+
+    <!--2.1 Postgrid updated 2.1 -->
+    <?php include __DIR__ . '/../components/posts-grid.php'; ?>
+
 
     <!--1. 📰 Posts Grid -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
