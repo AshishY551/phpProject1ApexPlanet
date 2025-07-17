@@ -1,22 +1,24 @@
-/* 🌀 Enhanced Fade-In Animation for Post Cards */
-
+/* 🌀 Advanced Fade & Pop Animation */
 @keyframes enhanced-fade-in {
   0% {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
+    transform: translateY(30px) scale(0.95) rotate(-1deg);
+    filter: blur(2px);
   }
-  60% {
-    opacity: 0.6;
-    transform: translateY(10px) scale(1.02);
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px) scale(1.02) rotate(1deg);
+    filter: blur(1px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0);
   }
 }
 
-/* 👇 Utility Class to Trigger It */
+/* 🔧 Utility Class for Tailwind Projects */
 .animate-enhanced-fade-in {
-  animation: enhanced-fade-in 0.7s ease-out both;
-  will-change: opacity, transform;
+  animation: enhanced-fade-in 0.8s cubic-bezier(0.25, 1, 0.5, 1) both;
+  will-change: transform, opacity, filter;
 }
