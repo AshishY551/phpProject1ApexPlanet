@@ -176,7 +176,7 @@
 
   <!-- layout.php or footer.php -->
   <script src="/public/assets/js/components/posts-grid.js"></script>
-
+  <script src="/public/assets/js/components/scroll-fade.js" defer></script>
 
 
 </body>

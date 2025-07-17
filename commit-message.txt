@@ -1,8 +1,11 @@
-feat: Built advanced posts grid component with filters, sort & search
+feat(ui): Enhanced fade-in animation for post grid components
 
-- Created modular posts-grid.php for reuse across pages
-- Includes multi-checkbox filter, single-sort selector, and search field
-- Uses post-card.php for each post (looped dynamically)
-- Fully responsive grid with Tailwind
-- Backend-ready structure and animations added
+- Replaced basic fade-in with advanced keyframe animation (enhanced-fade-in)
+- Animation now includes smooth scale, subtle rotation, and blur effects
+- Added `animate-enhanced-fade-in` utility class for reusable animated entry
+- Ensures better visual feedback across cards, comments, and news blocks
+- Fully responsive, GPU-optimized (`will-change`) and scalable for large UIs
+- Stored CSS in /public/assets/css/components/animations.css for modular usage
+
+Future-ready for integration with Intersection Observer or scroll triggers
 
