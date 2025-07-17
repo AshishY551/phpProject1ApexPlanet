@@ -53,7 +53,7 @@
     </div>
 
     <!--1. 🔍 Live Search + Sort -->
-    <div class="mt-12 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <!-- <div class="mt-12 flex flex-col sm:flex-row justify-between items-center gap-4">
         <input type="text" placeholder="Search posts..." class="w-full sm:w-1/2 border px-3 py-2 rounded shadow-sm" />
         <select class="border px-3 py-2 rounded shadow-sm">
             <option>Sort by</option>
@@ -61,7 +61,7 @@
             <option>Oldest</option>
             <option>Most Liked</option>
         </select>
-    </div>
+    </div> -->
 
     <!-- 3.1 Your Best posts .sections/middle-content.php -->
 

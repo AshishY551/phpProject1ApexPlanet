@@ -77,10 +77,12 @@
         <!-- 4. Add New Post Button -->
         <div class="flex justify-end mt-10">
             <a href="/views/add-post.php"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
-                ➕ Add New Post
+                class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                <i class="fas fa-plus-circle text-lg animate-pulse"></i>
+                <span class="hidden sm:inline">Add New Post</span>
             </a>
         </div>
+
     </section>
 
 </article>

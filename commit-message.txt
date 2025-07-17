@@ -1,11 +1,8 @@
-feat(ui): Enhanced fade-in animation for post grid components
+feat: Implemented scroll-triggered fade-in animation using IntersectionObserver
 
-- Replaced basic fade-in with advanced keyframe animation (enhanced-fade-in)
-- Animation now includes smooth scale, subtle rotation, and blur effects
-- Added `animate-enhanced-fade-in` utility class for reusable animated entry
-- Ensures better visual feedback across cards, comments, and news blocks
-- Fully responsive, GPU-optimized (`will-change`) and scalable for large UIs
-- Stored CSS in /public/assets/css/components/animations.css for modular usage
-
-Future-ready for integration with Intersection Observer or scroll triggers
+- Added scroll-fade.js to /public/assets/js/components/ for lightweight viewport animation
+- Applies animated entry effects to elements with .animate-enhanced-fade-in class
+- Utilized GPU-optimized transitions: opacity, translateY, and scale for smooth experience
+- Ensures performance and scalability using IntersectionObserver (no jQuery)
+- Linked script in layout.php for global usage across components
 
