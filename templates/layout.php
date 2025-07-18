@@ -19,6 +19,9 @@
   <!-- Your custom CSS (must come last so it can override others if needed) -->
 
   <link rel="stylesheet" href="/public/assets/css/components/posts-grid.css">
+  <!--  for create-post-modal.php -->
+  <link rel="stylesheet" href="/public/assets/css/components/posts-crud.css">
+
 
 
 
@@ -177,6 +180,9 @@
   <!-- layout.php or footer.php -->
   <script src="/public/assets/js/components/posts-grid.js"></script>
   <script src="/public/assets/js/components/scroll-fade.js" defer></script>
+  <!--  for create-post-modal.php -->
+  <script src="/public/assets/js/components/posts-crud.js" defer></script>
+
 
 
 
