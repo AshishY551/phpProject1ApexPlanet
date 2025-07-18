@@ -58,6 +58,20 @@
 
                 </div>
 
+
+                <!--3.1 🖼 Image Upload -->
+                <div>
+                    <!-- 📂 Multiple Upload Field -->
+                    <input type="file" name="images[]" accept="image/*" multiple onchange="previewMultipleImages(event)" class="mb-2" />
+
+                    <!-- 📝 Image Info (Optional) -->
+                    <!-- <div id="preview-info" class="text-sm text-gray-500 mt-2 hidden"></div> -->
+
+                    <!-- 🖼 Multiple Previews -->
+                    <div id="multi-preview" class="flex flex-wrap mt-2"></div>
+
+                </div>
+
                 <!-- 🔖 Category (Future Dynamic) -->
                 <select name="category" required
                     class="w-full px-4 py-2 border rounded-xl dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600">

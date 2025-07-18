@@ -68,6 +68,42 @@ function previewImage(event) {
 }
 
 
+// 🌠 Multiple Image Previews with Validation
+function previewMultipleImages(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById('multi-preview');
+
+    // Clear old previews
+    previewContainer.innerHTML = '';
+
+    const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+    const maxCount = 5;
+
+    if (files.length > maxCount) {
+        alert(`⚠️ You can upload a maximum of ${maxCount} images.`);
+        event.target.value = '';
+        return;
+    }
+
+    Array.from(files).forEach((file, index) => {
+        if (!validTypes.includes(file.type)) {
+            alert(`❌ ${file.name} is not a supported image type.`);
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.alt = `Preview ${index + 1}`;
+            img.className = 'w-24 h-24 object-cover rounded-lg shadow-md m-2 animate-fade-in';
+            previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+
 
 
 // (Optional) AJAX Submission
