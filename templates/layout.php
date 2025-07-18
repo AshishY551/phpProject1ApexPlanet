@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="/public/assets/css/components/posts-grid.css">
   <!--  for create-post-modal.php -->
   <link rel="stylesheet" href="/public/assets/css/components/posts-crud.css">
+  <link rel="stylesheet" href="/public/assets/css/components/create-post-modal.css">
+
 
 
 
@@ -55,6 +57,9 @@
 
     <!-- ✅ Main content: this should be dynamically included -->
     <main class="flex-1 mt-1 px-8 py-4 overflow-y-auto">
+      <!-- Inside views/index.php or views/dashboard.php -->
+      <?php include __DIR__ . '/../sections/modals/create-post-modal.php'; ?>
+
       <?php
       // Load a specific view (set dynamically from index.php or router.php
       if (isset($viewFile)) {
@@ -182,6 +187,8 @@
   <script src="/public/assets/js/components/scroll-fade.js" defer></script>
   <!--  for create-post-modal.php -->
   <script src="/public/assets/js/components/posts-crud.js" defer></script>
+  <script src="/public/assets/js/components/create-post-modal.js"></script>
+
 
 
 

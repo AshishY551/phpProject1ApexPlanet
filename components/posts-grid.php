@@ -75,13 +75,25 @@
         </div>
 
         <!-- 4. Add New Post Button -->
-        <div class="flex justify-end mt-10">
-            <a href="/views/add-post.php"
-                class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
-                <i class="fas fa-plus-circle text-lg animate-pulse"></i>
-                <span class="hidden sm:inline">Add New Post</span>
-            </a>
+        <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
+            <!-- 🔘 Modal Trigger Button -->
+            <div class="flex justify-end mt-10">
+                <button onclick="openCreateModal()"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    <i class="fas fa-plus-circle text-lg animate-pulse"></i>
+                    <span class="hidden sm:inline">Add New Post Fast</span>
+                </button>
+            </div>
+            <!-- 🔗 Redirect to Add Post Page -->
+            <div class="flex justify-end mt-10">
+                <a href="/views/add-post.php"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    <i class="fas fa-plus-circle text-lg animate-pulse"></i>
+                    <span class="hidden sm:inline">Go to Add-Post page</span>
+                </a>
+            </div>
         </div>
+
 
     </section>
 

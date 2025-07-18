@@ -1,8 +1,8 @@
-feat: Implemented scroll-triggered fade-in animation using IntersectionObserver
+feat: Added dynamic 'Create Post' modal with animation and future-ready form
 
-- Added scroll-fade.js to /public/assets/js/components/ for lightweight viewport animation
-- Applies animated entry effects to elements with .animate-enhanced-fade-in class
-- Utilized GPU-optimized transitions: opacity, translateY, and scale for smooth experience
-- Ensures performance and scalability using IntersectionObserver (no jQuery)
-- Linked script in layout.php for global usage across components
+- Modal includes all post fields: title, description, image, category, status
+- Fully responsive, dark mode enabled, and animated slide-in UX
+- CSRF-ready form pointing to /modules/posts/create.php
+- Includes new JS toggle + reusable modal layout in sections/modals/create-post-modal.php
+- Future-ready for scheduled posts, featured tags, or post types
 

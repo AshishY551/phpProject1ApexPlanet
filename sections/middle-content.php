@@ -45,17 +45,25 @@
 
     </section>
 
-    <!--1. ➕ Add New Post Button -->
-    <div class="flex justify-end mt-10">
-        <a href="/views/add-post.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-colors duration-200">
-            + Add New Post1
-        </a>
+    <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
+        <div class="flex justify-end mb-6">
+            <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
+                ➕ Add New Post Fast
+            </button>
+
+            <!--1. ➕ Add New Post Button -->
+            <div class="flex justify-end mt-10">
+                <a href="/views/add-post.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-colors duration-200">
+                    + Go to Create-Post page
+                </a>
+            </div>
+        </div>
+
     </div>
-    <div class="flex justify-end mb-6">
-        <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
-            ➕ Add New Post3
-        </button>
-    </div>
+
+
+
+
 
 
     <!--1. 🔍 Live Search + Sort -->
