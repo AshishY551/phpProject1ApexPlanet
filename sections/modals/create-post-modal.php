@@ -3,17 +3,17 @@
     <div class="bg-white dark:bg-gray-900 rounded-xl w-full max-w-2xl mx-auto p-6 animate-slide-up shadow-2xl relative">
 
         <!-- ✖️ Close Button -->
-        <button onclick="closeCreateModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 transition text-xl">
+        <button onclick="closeCreateModal()" class="absolute top-1 right-2 text-gray-500 hover:text-red-500 transition text-xl">
             <i class="fas fa-times"></i>
         </button>
 
         <!-- 📝 Header -->
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-1">
             <i class="fas fa-pen-nib text-blue-500"></i> Create New Post
         </h2>
 
         <!-- 🧾 Form -->
-        <form action="/modules/posts/create.php" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <form id="createPostForm" action="/modules/posts/create.php" method="POST" enctype="multipart/form-data" class="space-y-2">
             <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
 
             <!-- 🔤 Title -->
@@ -21,12 +21,23 @@
                 class="w-full px-4 py-2 rounded-xl border dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 transition" />
 
             <!-- 📝 Description -->
-            <textarea name="description" placeholder="Post description..." rows="4" required
-                class="w-full px-4 py-2 rounded-xl border dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 transition"></textarea>
+            <textarea name="description" placeholder="Write your post content..." rows="2" required
+                class="w-full px-4 py-2 rounded-xl border dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 transition markdown-editor"></textarea>
 
-            <!-- 🖼 Image Upload (Future Ready) -->
+            <!-- 🏷️ Tags Input -->
+            <input name="tags" type="text" placeholder="Tags (comma-separated)"
+                class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:bg-gray-800 dark:text-white focus:ring-2 focus:ring-purple-500 transition" />
+
+            <!--1.1 🖼 Image Upload (Future Ready) -->
             <input type="file" name="image" accept="image/*"
                 class="w-full px-4 py-2 border rounded-xl dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600" />
+
+            <!--2.1 🖼 Image Upload -->
+            <div>
+                <input type="file" name="image" accept="image/*" onchange="previewImage(event)"
+                    class="w-full px-4 py-2 border rounded-xl dark:bg-gray-800 dark:text-white border-gray-300 dark:border-gray-600" />
+                <img id="preview" src="#" class="mt-3 max-h-48 hidden rounded-xl shadow border" alt="Image Preview" />
+            </div>
 
             <!-- 🔖 Category (Future Dynamic) -->
             <select name="category" required

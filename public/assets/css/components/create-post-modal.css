@@ -12,3 +12,10 @@
 .animate-slide-up {
   animation: slide-up 0.4s ease-out both;
 }
+
+/* Tailwind already provides most styles */
+/* You can add animations or markdown editor CSS here */
+.markdown-editor {
+  min-height: 150px;
+  font-family: "Fira Code", monospace;
+}

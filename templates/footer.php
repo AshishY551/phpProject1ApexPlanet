@@ -136,3 +136,10 @@
 
 <!-- ✅ Include FontAwesome for icons -->
 <script src="https://kit.fontawesome.com/your_kit_code.js" crossorigin="anonymous"></script>
+
+
+<!-- ✅ POST MANAGEMENT SCRIPTS -->
+<?php if ($_SERVER['PHP_SELF'] === '/index.php' || $_SERVER['PHP_SELF'] === '/views/dashboard.php'): ?>
+    <script src="/public/assets/js/components/posts-crud.js" defer></script>
+    <script src="/public/assets/js/components/create-post-modal.js" defer></script>
+<?php endif; ?>
