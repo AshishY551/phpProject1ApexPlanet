@@ -1,34 +1,10 @@
-feat: Implemented Advanced Create Post Functionality (Page + Modal)
+feat: Enhanced Create Post UI with image preview, tag input, validation, and optional AJAX
 
-🎯 Key Features:
-- Added full `add-post.php` page for creating new posts
-- Integrated secure, animated modal form `create-post-modal.php` for instant post creation
-- Included responsive dual buttons: (1) open modal, (2) go to full create page
+- Added image preview on file selection
+- Added tags input (comma separated, backend-ready)
+- Improved accessibility and animations
+- Integrated optional AJAX submit script
+- Ready for future WYSIWYG editor support
+- Modular JS & scoped component CSS
 
-🛡️ Security:
-- CSRF protection using `$_SESSION['csrf_token']`
-- File upload validation and safe storage to `public/uploads/posts/`
-- Required field validation (title, description, category)
-
-💅 UI/UX:
-- Tailwind CSS-based responsive design
-- Category + status selectors (future dynamic-ready)
-- Modern animated buttons with hover, pulse, and transitions
-- Fully responsive on mobile, tablet, and desktop
-
-🧠 Backend Ready:
-- Form action wired to `/modules/posts/create.php`
-- Backend logic ready for DB insert, slug generation, image handling
-- Clean separation of modal vs full page creation
-
-🧩 Modular & Scalable:
-- Modal kept in `sections/modals/create-post-modal.php`
-- Page in `views/add-post.php`
-- Future AJAX/inline support possible without major rewrite
-
-📦 Assets:
-- JS handlers added in `public/assets/js/components/create-post.js`
-- Animation & form styling added in scoped modular CSS if needed
-
-This commit completes the Create (C in CRUD) feature with both modern UI/UX and scalable backend-ready architecture.
 

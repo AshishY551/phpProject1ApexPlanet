@@ -46,6 +46,10 @@
     </section>
 
     <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
+        <!-- Inside views/index.php or views/dashboard.php -->
+
+
+
         <div class="flex justify-end mb-6">
             <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
                 ➕ Add New Post Fast

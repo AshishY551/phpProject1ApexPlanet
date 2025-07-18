@@ -186,8 +186,8 @@
   <script src="/public/assets/js/components/posts-grid.js"></script>
   <script src="/public/assets/js/components/scroll-fade.js" defer></script>
   <!--  for create-post-modal.php -->
-  <script src="/public/assets/js/components/posts-crud.js" defer></script>
-  <script src="/public/assets/js/components/create-post-modal.js"></script>
+  <!-- <script src="/public/assets/js/components/posts-crud.js" defer></script> -->
+  <script src="/public/assets/js/components/create-post-modal.js" defer></script>
 
 
 
