@@ -1,16 +1,9 @@
-"feat: Implement Cropper.js modal with dynamic preview and input sync
+git commit -m "refactor: centralize post card variables for cleaner dynamic rendering
 
-- Integrated Cropper.js via CDN to allow cropping/resizing before upload
-- Added a responsive and accessible cropper modal in create-post-modal.php
-- Enabled cropping from drag-drop image input with preview logic
-- Dynamically created new File objects from cropped canvas blobs
-- Appended cropped files to a synced <input type='file' multiple> using DataTransfer API
-- Maintained visual previews using Tailwind utility classes and fade-in animation
-- Integrated remove button for each preview with proper file list sync
-- Ensured all cropped images are submitted with form without breaking existing modal UI
-- Preserved all previous file input and image validation functionality (max 5 images, 3MB each)
-- Separated logic cleanly in image-upload.js for reusability and future modularity
-
-🎯 This update prepares the post creation module for professional-level image handling workflows, enabling advanced UX like cropping and inline preview control.
-"
+- Replaced inline dynamic values like <?= htmlspecialchars($post['...']) ?> with centralized PHP variables
+- Added fallback-safe assignments at the top of components/post-card.php
+- Improved readability, security, and reusability across UI
+- Maintains existing UI/UX without visual changes
+- Prepares post-card component for seamless integration with dynamic backend (AJAX/API)
+- Fulfills industry standards: DRY, scalable, secure and high-value frontend practice"
 

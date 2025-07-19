@@ -232,4 +232,53 @@ $ git push --tags
 | `git tag -a v1.1-cropper -m "..."` | ✅ Tag created | Local annotated tag `v1.1-cropper` now exists             |
 | `git tag`                          | ✅ Confirmed   | Shows `v1.1-cropper` as expected                          |
 
-🕒 **Created on:** July 19, 2025
+🕒 **Created on:** July 19, 2025 afternoon
+
+Yes, ✅ **you can tag any past commit at any time** — even weeks or months later.
+
+---
+
+### 🏷 How to Tag a Past Commit
+
+#### 🔍 Step 1: Find the commit hash
+
+Use:
+
+```bash
+git log --oneline
+```
+
+This will list commits like:
+
+```
+535c876 feat: Implement Cropper.js modal with dynamic preview and input sync
+33f4f9f feat: Add drag & drop image upload with preview and validation
+```
+
+#### 📌 Step 2: Tag the specific commit
+
+```bash
+git tag -a v1.0-cropper -m "Cropper modal setup with delete & sync" 535c876
+```
+
+> Replace `535c876` with your desired commit hash.
+
+#### 🚀 Step 3: Push the tag to remote
+
+```bash
+git push origin v1.0-cropper
+```
+
+---
+
+### 📌 Notes
+
+| Feature                | Available                                                    |
+| ---------------------- | ------------------------------------------------------------ |
+| Tag old commits        | ✅ Yes                                                       |
+| Edit/delete local tags | ✅ Yes (`git tag -d <tag>`)                                  |
+| Overwrite pushed tags  | ⚠️ Yes, but requires force (`git push --force origin <tag>`) |
+
+Let me know if you want to tag something now — I can help pick the right hash and format.
+
+🕒 **Created on:** July 19, 2025 Night
