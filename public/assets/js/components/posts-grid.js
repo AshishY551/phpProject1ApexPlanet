@@ -35,4 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     });
+
+    // ✅ Bind edit/delete actions on initial load too
+    bindPostActions();
 });
+
+
+// ✅ New reusable function to bind edit/delete events
+function bindPostActions() {
+    document.querySelectorAll('.edit-post-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const postId = btn.dataset.id;
+            openEditModal(postId);
+        });
+    });
+
+    document.querySelectorAll('.delete-post-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const postId = btn.dataset.id;
+            openDeleteModal(postId);
+        });
+    });
+}
+
+// ✅ Placeholder modal functions for future use
+function openEditModal(id) {
+    console.log(`📝 Edit clicked for post ID: ${id}`);
+    // TODO: Integrate edit modal logic
+}
+
+function openDeleteModal(id) {
+    console.log(`🗑️ Delete clicked for post ID: ${id}`);
+    // TODO: Hook into delete-confirm.php modal
+}

@@ -1,9 +1,10 @@
-git commit -m "refactor: centralize post card variables for cleaner dynamic rendering
+"refactor: Wrap post card in dynamic container with data-id for JS targeting
 
-- Replaced inline dynamic values like <?= htmlspecialchars($post['...']) ?> with centralized PHP variables
-- Added fallback-safe assignments at the top of components/post-card.php
-- Improved readability, security, and reusability across UI
-- Maintains existing UI/UX without visual changes
-- Prepares post-card component for seamless integration with dynamic backend (AJAX/API)
-- Fulfills industry standards: DRY, scalable, secure and high-value frontend practice"
+- Added <div class='post-card-wrapper' data-id='<?= $id ?>'> around post-card for future JavaScript DOM manipulation
+- Enables modular AJAX actions like edit/delete, modal preview, or selection handling
+- Preserved all visual UI/UX elements without any changes to design
+- Ensures backend-ready scalability while maintaining clean separation of logic and layout"
+- Added Some more In git use commnd related notes
+- Wrapper relates note and guide in readmefile.
+
 
