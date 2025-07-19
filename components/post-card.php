@@ -1,3 +1,45 @@
+<!-- 🔁 1. Add Dynamic Post Logic at the Top -->
+<?php
+
+
+// add that temporary fallback data block at the very top of components/post-card.php
+// 🧪 Temp fallback for frontend testing only (remove after backend integration)
+if (!isset($post)) {
+    $post = [
+        'id' => 1,
+        'title' => 'Demo Post Title',
+        'author' => 'Demo Author',
+        'posted' => 'Just now',
+        'views' => 123,
+        'comments' => 5,
+        'excerpt' => 'This is a preview of the post...',
+        'image' => '', // Leave empty to test fallback image logic
+        'category' => 'Tech',
+        'featured' => true,
+    ];
+}
+
+// 🧠 Validate post input (keep this to avoid rendering errors)
+if (!isset($post) || !is_array($post)) {
+    echo "<div class='text-red-500'>⚠️ Post data not provided</div>";
+    return;
+}
+
+// 🔐 Safe fallback values
+$id = $post['id'] ?? 0;
+$title = htmlspecialchars($post['title'] ?? 'Untitled Post');
+$author = htmlspecialchars($post['author'] ?? 'Unknown');
+$posted = htmlspecialchars($post['posted'] ?? 'Some time ago');
+$views = htmlspecialchars($post['views'] ?? 0);
+$comments = htmlspecialchars($post['comments'] ?? 0);
+$excerpt = htmlspecialchars($post['excerpt'] ?? 'No preview available...');
+$image = !empty($post['image']) ? '/public/uploads/posts/' . $post['image'] : '/public/assets/images/default-post.jpg';
+$category = htmlspecialchars($post['category'] ?? 'Uncategorized');
+$isFeatured = $post['featured'] ?? false;
+?>
+
+
+
 <!-- 🔥 Advanced Post Card Component -->
 <div id="post-card" class="group relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] overflow-hidden">
 
@@ -55,6 +97,5 @@
             </div>
         </div>
     </div>
-
 
 </div>

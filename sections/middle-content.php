@@ -19,51 +19,56 @@
     <!--2.1 Postgrid updated 2.1 -->
     <?php include __DIR__ . '/../components/posts-grid.php'; ?>
 
+    <section class="w-full max-w-7xl bg-white  mx-auto p-4 space-y-10">
+        <!--1. 📰 Posts Grid -->
+        <div>This is Old Just Demo Post section</div>
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
 
-    <!--1. 📰 Posts Grid -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+            <!-- ✅ Example Post Card -->
+            <article class="bg-white shadow rounded-2xl p-4 flex flex-col justify-between transition-transform transform hover:scale-105 duration-300">
+                <img src="/public/uploads/posts/img_686a7a59a43091.65507314.jpeg" alt="Post Image" class="rounded-md mb-4 w-full h-4000 object-cover">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-1">First post</h2>
+                    <p class="text-sm text-gray-600 mb-3">Testing post creation working.</p>
+                </div>
+                <div class="text-xs text-gray-400 mb-2">July 5, 2025</div>
+                <div class="flex justify-between mt-2">
+                    <button class="text-sm text-blue-500 hover:text-blue-700 font-medium">Edit</button>
+                    <button class="text-sm text-red-500 hover:text-red-700 font-medium">Delete</button>
+                </div>
+            </article>
 
-        <!-- ✅ Example Post Card -->
-        <article class="bg-white shadow rounded-2xl p-4 flex flex-col justify-between transition-transform transform hover:scale-105 duration-300">
-            <img src="/public/uploads/posts/img_686a7a59a43091.65507314.jpeg" alt="Post Image" class="rounded-md mb-4 w-full h-4000 object-cover">
-            <div>
-                <h2 class="text-xl font-semibold text-gray-800 mb-1">First post</h2>
-                <p class="text-sm text-gray-600 mb-3">Testing post creation working.</p>
+            <!-- 🔧 Placeholder Card -->
+            <article class="bg-white shadow rounded-2xl p-4 flex flex-col justify-center items-center opacity-40">
+                <p class="italic">Future post preview</p>
+                <div class="mt-2 text-gray-400 text-xs">Reserved for later expansion</div>
+            </article>
+
+        </section>
+
+        <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
+            <!-- Inside views/index.php or views/dashboard.php -->
+
+
+
+            <div class="flex justify-end mb-6">
+                <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
+                    ➕ Add New Post Fast
+                </button>
+
+                <!--1. ➕ Add New Post Button -->
+                <div class="flex justify-end mt-10">
+                    <a href="/views/add-post.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-colors duration-200">
+                        + Go to Create-Post page
+                    </a>
+                </div>
             </div>
-            <div class="text-xs text-gray-400 mb-2">July 5, 2025</div>
-            <div class="flex justify-between mt-2">
-                <button class="text-sm text-blue-500 hover:text-blue-700 font-medium">Edit</button>
-                <button class="text-sm text-red-500 hover:text-red-700 font-medium">Delete</button>
-            </div>
-        </article>
 
-        <!-- 🔧 Placeholder Card -->
-        <article class="bg-white shadow rounded-2xl p-4 flex flex-col justify-center items-center opacity-40">
-            <p class="italic">Future post preview</p>
-            <div class="mt-2 text-gray-400 text-xs">Reserved for later expansion</div>
-        </article>
-
+        </div>
     </section>
 
-    <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
-        <!-- Inside views/index.php or views/dashboard.php -->
 
 
-
-        <div class="flex justify-end mb-6">
-            <button onclick="openCreateModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-xl shadow-lg transition duration-200">
-                ➕ Add New Post Fast
-            </button>
-
-            <!--1. ➕ Add New Post Button -->
-            <div class="flex justify-end mt-10">
-                <a href="/views/add-post.php" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-colors duration-200">
-                    + Go to Create-Post page
-                </a>
-            </div>
-        </div>
-
-    </div>
 
 
 
