@@ -87,6 +87,33 @@
                     </button><i class="fas fa-times"></i>
                 </div> -->
 
+                <!-- Add Crop Modal HTML -->
+                <!-- 🔲 Cropper Modal -->
+                <div id="cropperModal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-70 hidden">
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl w-[95%] max-w-2xl relative shadow-2xl">
+
+                        <!-- ✖️ Close -->
+                        <button onclick="closeCropper()" class="absolute top-3 right-4 text-red-500 text-xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                        <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-4">🖼 Crop Your Image</h2>
+
+                        <!-- Image to crop -->
+                        <div class="max-h-[400px] overflow-hidden rounded-xl">
+                            <img id="cropperImage" src="" class="max-w-full max-h-[400px]" />
+                        </div>
+
+                        <!-- Action -->
+                        <div class="text-right mt-4">
+                            <button onclick="cropAndInsert()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl shadow">
+                                ✅ Crop & Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
 
@@ -115,6 +142,10 @@
                         Post Now
                     </button>
                 </div>
+
+                <!-- Sync Files with Hidden File Input -->
+                <!-- Hidden input to hold manually added cropped files -->
+                <input type="file" name="images[]" id="finalImageInput" multiple hidden>
             </form>
         </div>
     </div>

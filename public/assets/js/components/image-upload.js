@@ -74,43 +74,90 @@ function previewMultipleImages(event) {
 
 
 
+// Add Cropper Logic 
 
+let cropper;
+let tempFile;
 
+// Open Cropper modal when file is selected
+fileInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file || !file.type.startsWith('image/')) return;
 
+  const reader = new FileReader();
+  reader.onload = () => {
+    document.getElementById('cropperImage').src = reader.result;
+    document.getElementById('cropperModal').classList.remove('hidden');
 
-//🧪 3.1 old. Image Validation: File Size + Dimensions
+    // wait until image is rendered
+    setTimeout(() => {
+      const image = document.getElementById('cropperImage');
+      cropper = new Cropper(image, {
+        aspectRatio: 16 / 9,
+        viewMode: 1,
+        autoCropArea: 1
+      });
+    }, 100);
 
-// function previewMultipleImages(event) {
-//   const previewContainer = document.getElementById('previewContainer');
-//   previewContainer.innerHTML = '';
+    tempFile = file; // Save for later input sync
+  };
+  reader.readAsDataURL(file);
+});
 
-//   const files = event.target.files;
-//   const maxSizeMB = 3;
-//   const maxFiles = 5;
+function closeCropper() {
+  document.getElementById('cropperModal').classList.add('hidden');
+  if (cropper) {
+    cropper.destroy();
+    cropper = null;
+  }
+}
 
-//   if (files.length > maxFiles) {
-//     alert(`❌ Maximum ${maxFiles} images allowed.`);
-//     event.target.value = "";
-//     return;
-//   }
+// When user confirms crop
+function cropAndInsert() {
+  if (!cropper) return;
 
-//   Array.from(files).forEach(file => {
-//     if (!file.type.startsWith('image/')) return;
+  cropper.getCroppedCanvas().toBlob(blob => {
+    // Convert blob to file
+    const croppedFile = new File([blob], tempFile.name, { type: blob.type });
 
-//     if (file.size > maxSizeMB * 1024 * 1024) {
-//       alert(`❌ ${file.name} exceeds ${maxSizeMB}MB.`);
-//       return;
-//     }
+    // Add to previewContainer
+    const reader = new FileReader();
+    reader.onload = e => {
+      const wrapper = document.createElement('div');
+      wrapper.className = "relative group animate-fade-in";
 
-//     const reader = new FileReader();
-//     reader.onload = e => {
-//       const img = document.createElement('img');
-//       img.src = e.target.result;
-//       img.alt = "Preview";
-//       img.className = "rounded-lg w-full h-40 object-cover shadow";
-//       previewContainer.appendChild(img);
-//     };
-//     reader.readAsDataURL(file);
-//   });
-// }
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.className = "rounded-lg w-full h-40 object-cover shadow";
 
+      const btn = document.createElement('button');
+      btn.type = "button";
+      btn.className = "absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hidden group-hover:block";
+      btn.innerHTML = '<i class="fas fa-times"></i>';
+      btn.onclick = () => {
+        wrapper.remove();
+        selectedFiles = selectedFiles.filter(f => f.name !== croppedFile.name);
+      };
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(btn);
+      document.getElementById('previewContainer').appendChild(wrapper);
+    };
+    reader.readAsDataURL(croppedFile);
+
+    // Save file to form input manually
+    selectedFiles.push(croppedFile);
+    syncFilesToInput();
+
+    closeCropper();
+  });
+}
+
+// Sync Files with Hidden File Input
+let selectedFiles = [];
+
+function syncFilesToInput() {
+  const dataTransfer = new DataTransfer();
+  selectedFiles.forEach(file => dataTransfer.items.add(file));
+  document.getElementById('finalImageInput').files = dataTransfer.files;
+}
