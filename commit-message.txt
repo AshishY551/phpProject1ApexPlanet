@@ -1,24 +1,16 @@
-feat(posts-create): Enhanced post creation UI with multiple image preview and advanced upload features
+"feat: Implement Cropper.js modal with dynamic preview and input sync
 
-✨ Major UI/UX Enhancements:
-- Integrated multiple image upload preview using FileReader API
-- Designed responsive thumbnail preview grid with animation support
-- Enforced max image count and valid MIME type checks
-- Created reusable JS utility: `previewMultipleImages(event)` for modular use
-- Improved accessibility with alt text, transitions, and user feedback
+- Integrated Cropper.js via CDN to allow cropping/resizing before upload
+- Added a responsive and accessible cropper modal in create-post-modal.php
+- Enabled cropping from drag-drop image input with preview logic
+- Dynamically created new File objects from cropped canvas blobs
+- Appended cropped files to a synced <input type='file' multiple> using DataTransfer API
+- Maintained visual previews using Tailwind utility classes and fade-in animation
+- Integrated remove button for each preview with proper file list sync
+- Ensured all cropped images are submitted with form without breaking existing modal UI
+- Preserved all previous file input and image validation functionality (max 5 images, 3MB each)
+- Separated logic cleanly in image-upload.js for reusability and future modularity
 
-📦 File Structure Improvements:
-- JS placed in `/public/assets/js/components/image-preview.js`
-- Optional CSS prepared for fade-in animation and thumbnail layout
-- Input field enhanced with `multiple` and better styling
-
-🧾 Future-Ready Extensions (Prepared UI):
-- Drag & drop zone structure ready to integrate
-- Placeholder for image crop/resize logic
-- Modular layout for AJAX or live validation integration
-
-🎯 Goals Met:
-- Fully responsive and user-friendly design
-- Scalable code for future gallery features
-- Advanced UX using animations, interactivity, and dynamic previews
+🎯 This update prepares the post creation module for professional-level image handling workflows, enabling advanced UX like cropping and inline preview control.
+"
 

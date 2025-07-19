@@ -188,3 +188,48 @@ To github-Aypratap1:AshishY551/phpProject1ApexPlanet.git
 4638260..430d3bd main -> main
 
 🕒 **Created on:** July 15, 2025
+
+$ git init
+
+$ git add .
+
+$ nano commit-message.txt
+
+$ nano commit-message.txt
+
+$ git commit -F commit-message.txt
+[main 535c876] "feat: Implement Cropper.js modal with dynamic preview and input sync
+3 files changed, 112 insertions(+), 29 deletions(-)
+
+$ git push
+
+$ git tag -a v1.1-cropper -m "Cropper modal, preview delete, input sync complete"
+
+$ git tag
+//You should see:
+//v1.1-cropper
+
+//🧪 2. Check Current Git Status
+//Make sure you're on a commit, not in the middle of a merge or rebase:
+$ git status
+
+//✅ 3. Manually Reapply Tag to Last Commit
+//Try tagging explicitly on the last commit:
+$ git tag -a v1.1-cropper HEAD -m "Cropper modal, preview delete, input sync complete"
+
+//If you want this tag to appear on GitHub (or other remotes), you still need to push the tag explicitly:
+$ git push origin v1.1-cropper
+//Enumerating objects: 1, done.
+
+//Or push all local tags at once:
+$ git push --tags
+//Everything up-to-date
+
+| Step                               | Status         | Notes                                                     |
+| ---------------------------------- | -------------- | --------------------------------------------------------- |
+| `git commit -F commit-message.txt` | ✅ Success     | Commit `535c876` created with your full Cropper.js update |
+| `git push`                         | ✅ Success     | Pushed commit to GitHub remote (`main` branch)            |
+| `git tag -a v1.1-cropper -m "..."` | ✅ Tag created | Local annotated tag `v1.1-cropper` now exists             |
+| `git tag`                          | ✅ Confirmed   | Shows `v1.1-cropper` as expected                          |
+
+🕒 **Created on:** July 19, 2025
