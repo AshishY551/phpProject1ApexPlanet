@@ -1,6 +1,6 @@
 <!-- 🔽 Create Post Modal -->
 <!-- absolute xxx -->
-<div id="createPostModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm overflow-y-auto py-10 hidden">
+<div id="createPostModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm overflow-y-auto py-20 px-20 hidden">
     <div class="bg-white dark:bg-gray-900 rounded-xl w-full max-w-2xl mx-auto p-6 animate-slide-up shadow-2xl relative">
 
         <!-- ✖️ Close Button -->
@@ -45,10 +45,6 @@
                     <!-- 📸 Image Preview -->
                     <img id="preview" src="#" class="mt-3 max-h-48 hidden rounded-xl shadow border" alt="Image Preview" />
 
-                    <!-- 📸 Image Preview -->
-                    <!-- <img id="preview" src="#" alt="Image Preview" class="hidden w-full max-h-64 rounded-xl object-cover shadow-md transition-all duration-300" /> -->
-
-
                     <!-- 📝 Image Info (Optional) -->
                     <div id="preview-info" class="text-sm text-gray-500 mt-2 hidden"></div>
 
@@ -69,8 +65,31 @@
 
                     <!-- 🖼 Multiple Previews -->
                     <div id="multi-preview" class="flex flex-wrap mt-2"></div>
+                    <div>Multipreview</div>
 
                 </div>
+                <!--4.1 🖼 Image Upload With drag & drop -->
+                <div id="dropZone"
+                    class="w-full p-6 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl text-center text-gray-500 dark:text-gray-400 cursor-pointer transition hover:border-blue-500 hover:text-blue-600">
+                    <p>📁 Drag & Drop images here or click to upload</p>
+                    <input id="imageUpload" name="images[]" type="file" multiple accept="image/*"
+                        class="hidden" onchange="previewMultipleImages(event)">
+                </div>
+                <div id="previewContainer" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4"></div>
+
+
+                <!-- test - its purpose completed-->
+                <!-- <div class="relative group w-40 h-40">
+                    <img src="https://via.placeholder.com/150" class="rounded-lg w-full h-full object-cover shadow" />
+                    <button type="button"
+                        class="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full  group-hover:flex items-center justify-center z-50">
+                        <i class="fas fa-times"></i>
+                    </button><i class="fas fa-times"></i>
+                </div> -->
+
+
+
+
 
                 <!-- 🔖 Category (Future Dynamic) -->
                 <select name="category" required
@@ -100,3 +119,6 @@
         </div>
     </div>
 </div>
+
+
+<script src="/public/assets/js/components/image-upload.js" defer></script>

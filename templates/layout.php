@@ -15,6 +15,9 @@
 
   <!-- Font Awesome (for icons like thumbs up/down) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Font Awesome CDN -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+
 
   <!-- Your custom CSS (must come last so it can override others if needed) -->
 
@@ -188,6 +191,8 @@
   <!--  for create-post-modal.php -->
   <!-- <script src="/public/assets/js/components/posts-crud.js" defer></script> -->
   <script src="/public/assets/js/components/create-post-modal.js" defer></script>
+  <script src="/public/assets/js/components/image-upload.js" defer></script>
+
 
 
 

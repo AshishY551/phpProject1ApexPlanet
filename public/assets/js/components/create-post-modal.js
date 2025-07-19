@@ -27,7 +27,7 @@ function closeCreateModal() {
 //     imgPreview.classList.remove('hidden');
 // }
 
-// 🔍 Advanced Image Preview with Validation and Dynamic Alt Text
+//for inpute tag  2.1 🔍 Advanced Image Preview with Validation and Dynamic Alt Text
 function previewImage(event) {
     const fileInput = event.target;
     const imgPreview = document.getElementById('preview');
@@ -68,40 +68,40 @@ function previewImage(event) {
 }
 
 
-// 🌠 Multiple Image Previews with Validation
-function previewMultipleImages(event) {
-    const files = event.target.files;
-    const previewContainer = document.getElementById('multi-preview');
+//3.1 🌠 Multiple Image Previews with Validation
+// function previewMultipleImages(event) {
+//     const files = event.target.files;
+//     const previewContainer = document.getElementById('multi-preview');
 
-    // Clear old previews
-    previewContainer.innerHTML = '';
+//     // Clear old previews
+//     previewContainer.innerHTML = '';
 
-    const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-    const maxCount = 5;
+//     const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+//     const maxCount = 5;
 
-    if (files.length > maxCount) {
-        alert(`⚠️ You can upload a maximum of ${maxCount} images.`);
-        event.target.value = '';
-        return;
-    }
+//     if (files.length > maxCount) {
+//         alert(`⚠️ You can upload a maximum of ${maxCount} images.`);
+//         event.target.value = '';
+//         return;
+//     }
 
-    Array.from(files).forEach((file, index) => {
-        if (!validTypes.includes(file.type)) {
-            alert(`❌ ${file.name} is not a supported image type.`);
-            return;
-        }
+//     Array.from(files).forEach((file, index) => {
+//         if (!validTypes.includes(file.type)) {
+//             alert(`❌ ${file.name} is not a supported image type.`);
+//             return;
+//         }
 
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.alt = `Preview ${index + 1}`;
-            img.className = 'w-24 h-24 object-cover rounded-lg shadow-md m-2 animate-fade-in';
-            previewContainer.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-    });
-}
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//             const img = document.createElement('img');
+//             img.src = e.target.result;
+//             img.alt = `Preview ${index + 1}`;
+//             img.className = 'w-24 h-24 object-cover rounded-lg shadow-md m-2 animate-fade-in';
+//             previewContainer.appendChild(img);
+//         };
+//         reader.readAsDataURL(file);
+//     });
+// }
 
 
 
@@ -123,3 +123,4 @@ document.getElementById('createPostForm')?.addEventListener('submit', function (
         alert("Failed to create post.");
     });
 });
+ 
