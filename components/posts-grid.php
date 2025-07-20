@@ -74,6 +74,19 @@
             <?php endfor; ?>
         </div>
 
+        <!-- 3. AJAX-Powered Dynamic Posts Grid -->
+        <div id="postsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- JS will dynamically insert post cards here -->
+        </div>
+
+        <!-- 🔁 Load More Button -->
+        <div class="text-center mt-6">
+            <!-- <button id="loadMoreBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded shadow hidden">
+                Load More
+            </button> -->
+        </div>
+
+
         <!-- 4. Add New Post Button -->
         <div class="flex flex-col sm:flex-row justify-end gap-4 mt-10">
             <!-- 🔘 Modal Trigger Button -->

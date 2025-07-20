@@ -112,13 +112,13 @@ $isFeatured = $post['featured'] ?? false;
 
                 <!--static 🛠 Placeholder Edit/Delete -->
                 <!-- <div class="flex items-center space-x-2">
-                <button class="px-3 py-[4px] text-xs bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition duration-200" title="Edit">
-                    ✏️ Edit
-                </button>
-                <button class="px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200" title="Delete">
-                    🗑️ Delete
-                </button>
-            </div> -->
+                    <button class="px-3 py-[4px] text-xs bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition duration-200" title="Edit">
+                        ✏️ Edit
+                    </button>
+                    <button class="px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200" title="Delete">
+                        🗑️ Delete
+                    </button>
+                </div> -->
 
                 <!--Dynamic Future backend integration -->
                 <div class="flex items-center space-x-2">

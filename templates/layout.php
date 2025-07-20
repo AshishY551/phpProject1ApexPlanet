@@ -197,6 +197,9 @@
   <!-- <script src="/public/assets/js/components/posts-crud.js" defer></script> -->
   <script src="/public/assets/js/components/create-post-modal.js" defer></script>
   <script src="/public/assets/js/components/image-upload.js" defer></script>
+  <!-- HOOK read.php INTO post-card.php VIA AJAX Converts response JSON into post cards -->
+  <script src="/public/assets/js/components/posts-loader.js" defer></script>
+
 
 
 
