@@ -15,7 +15,10 @@ function fetchPosts(filters = {}) {
     offset
   });
 
-  fetch(`/modules/posts/read.php?${params}`)
+  // fetch(`/modules/posts/read.php?${params}`)
+  //   ✅ Why?
+  // Because public/ is  web root, and modules/ is one level above it. So we use ../ to go up a directory.
+  fetch(`/../modules/posts/read.php?${params}`)
     .then(res => res.json())
     .then(data => {
       if (!data || data.length === 0) {

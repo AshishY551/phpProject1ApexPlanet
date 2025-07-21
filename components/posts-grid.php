@@ -68,11 +68,11 @@
         </form>
 
         <!-- 3. Posts Grid (2 rows × 4 columns) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <?php for ($i = 1; $i <= 8; $i++): ?>
-                <?php include __DIR__ . '/post-card.php'; ?>
-            <?php endfor; ?>
-        </div>
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!?php for ($i = 1; $i <= 8; $i++): ?>
+                <!?php include __DIR__ . '/post-card.php'; ?>
+            <!?php endfor; ?>
+        </div> -->
 
         <!-- 3. AJAX-Powered Dynamic Posts Grid -->
         <div id="postsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -81,9 +81,9 @@
 
         <!-- 🔁 Load More Button -->
         <div class="text-center mt-6">
-            <!-- <button id="loadMoreBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded shadow hidden">
+            <button id="loadMoreBtn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded shadow hidden">
                 Load More
-            </button> -->
+            </button>
         </div>
 
 
