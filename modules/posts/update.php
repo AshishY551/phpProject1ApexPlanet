@@ -37,7 +37,9 @@ $user_id   = 1; // TODO: Replace with $_SESSION['user_id']
 // exit;
 
 // 4. Slug (regenerate only if title changed)
-$slug = generateUniqueSlug($title, $pdo, $post_id);
+// $slug = generateUniqueSlug($title, $pdo, $post_id);
+$slug = generateUniqueSlug($pdo, $title, $post_id);
+
 
 // 5. Handle new image upload (optional)
 $image = $old_image;

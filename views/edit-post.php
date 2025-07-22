@@ -7,8 +7,8 @@ if (empty($_SESSION['csrf_token'])) {
 $csrf = $_SESSION['csrf_token'];
 
 require_once __DIR__ . '/../includes/db.php';
-require_once __DIR__ . '/../templates/header.php';
 
+// ✅ Moved this block before header.php
 // 📥 Get post ID to edit
 $postId = $_GET['id'] ?? null;
 if (!$postId) {
@@ -16,17 +16,39 @@ if (!$postId) {
     exit;
 }
 
+var_dump($pdo); // Check if PDO is valid
+
 // 📦 Fetch post data (simulate for now — replace with DB query)
 $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
 $stmt->execute([$postId]);
 $post = $stmt->fetch();
+var_dump($post);
+exit;
 
-if (!$post) {
-    echo "<p class='text-red-600 text-center mt-10'>Post not found.</p>";
-    require_once __DIR__ . '/../templates/footer.php';
+
+
+// if (!$post) {
+//     // echo "<p class='text-red-600 text-center mt-10'>Post not found.</p>";
+//     echo "<div class='text-center mt-12 text-red-500 text-lg font-semibold'>
+//         ❌ Post not found or has been deleted.
+//       </div>";
+
+//     require_once __DIR__ . '/../templates/footer.php';
+//     exit;
+// }
+if (!$postId) {
+    $_SESSION['error'] = "Missing post ID.";
+    header('Location: /views/dashboard.php');
     exit;
 }
+
+
+
+// ✅ Now it's safe to load header
+require_once __DIR__ . '/../templates/header.php';
 ?>
+
+
 
 <!-- ✏️ Edit Post UI -->
 <section class="max-w-3xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-xl shadow-md my-10 animate-fade-in">
