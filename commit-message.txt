@@ -1,10 +1,10 @@
-"refactor: Wrap post card in dynamic container with data-id for JS targeting
+feat: Added advanced edit-post UI with prefilled fields and image preview
 
-- Added <div class='post-card-wrapper' data-id='<?= $id ?>'> around post-card for future JavaScript DOM manipulation
-- Enables modular AJAX actions like edit/delete, modal preview, or selection handling
-- Preserved all visual UI/UX elements without any changes to design
-- Ensures backend-ready scalability while maintaining clean separation of logic and layout"
-- Added Some more In git use commnd related notes
-- Wrapper relates note and guide in readmefile.
-
-
+- Introduced `views/edit-post file` to allow secure post editing
+- Preloads post data using dynamic ID (GET param)
+- Includes CSRF protection and hidden input for post ID
+- Responsive, modern UI with Tailwind + dark mode support
+- Existing image preview with option to replace
+- Fields: title, description, category, status, and image upload
+- Ready for backend update handler integration (`modules/posts/update.php`)
+- Built to support future enhancements (WYSIWYG, validation, autosave, etc.)

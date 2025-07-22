@@ -121,9 +121,12 @@ $isFeatured = $post['featured'] ?? false;
                 </div> -->
 
                 <!--Dynamic Future backend integration -->
+                <!-- Mrthod1 <a href="/views/edit-post.php?id=<!?= $id ?>" -->
+                <!--Method2  Advanced future UX: no page reload, edit in modal via AJAX  -- data-id="<!?= $id ?>"
+        onclick="openEditPostModal(this)" -->
                 <div class="flex items-center space-x-2">
                     <button class="edit-post-btn px-3 py-[4px] text-xs bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition duration-200"
-                        data-id="<?= $id ?>" title="Edit">
+                        data-id="<?= $id ?>" title="Edit" onclick="openEditPostModal(this)">
                         ✏️ Edit
                     </button>
                     <button class="delete-post-btn px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200"

@@ -67,6 +67,10 @@
     <main class="flex-1 mt-1 px-8 py-4 overflow-y-auto">
       <!-- Inside views/index.php or views/dashboard.php -->
       <?php include __DIR__ . '/../sections/modals/create-post-modal.php'; ?>
+      <!-- ✅ Place sections/modals/edit-post-modal.php:
+      include in layout or middle-content.php: -->
+      <?php include __DIR__ . '/../sections/modals/edit-post-modal.php'; ?>
+
 
       <?php
       // Load a specific view (set dynamically from index.php or router.php
@@ -199,6 +203,7 @@
   <script src="/public/assets/js/components/image-upload.js" defer></script>
   <!-- HOOK read.php INTO post-card.php VIA AJAX Converts response JSON into post cards -->
   <script src="/public/assets/js/components/posts-loader.js" defer></script>
+  <script src="/public/assets/js/components/edit-post-modal.js" defer></script>
 
 
 

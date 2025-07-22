@@ -7,6 +7,7 @@ session_start();
 
 require_once __DIR__ . '/../../includes/db.php';
 require_once __DIR__ . '/../../includes/helpers.php';
+require_once __DIR__ . '/../../includes/session.php';
 
 // 1. Validate method
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
