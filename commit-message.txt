@@ -8,3 +8,6 @@ feat: Added advanced edit-post UI with prefilled fields and image preview
 - Fields: title, description, category, status, and image upload
 - Ready for backend update handler integration (`modules/posts/update.php`)
 - Built to support future enhancements (WYSIWYG, validation, autosave, etc.)
+- ALso SOme more updates in other files.
+- Some more files added for update post working.
+

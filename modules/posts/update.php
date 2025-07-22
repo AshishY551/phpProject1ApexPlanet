@@ -28,6 +28,14 @@ $content   = trim($_POST['content']);
 $old_image = $_POST['old_image'] ?? null;
 $user_id   = 1; // TODO: Replace with $_SESSION['user_id']
 
+// echo json_encode([
+//     'message' => '✅ Fake update successful (no DB)',
+//     'title' => $title,
+//     'slug' => $slug,
+//     'image' => $image
+// ]);
+// exit;
+
 // 4. Slug (regenerate only if title changed)
 $slug = generateUniqueSlug($title, $pdo, $post_id);
 
