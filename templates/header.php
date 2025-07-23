@@ -334,8 +334,8 @@
           </button>
           <div x-show="showAccount" @click.away="showAccount = false" class="absolute right-0 mt-2 w-72 bg-white border rounded shadow-lg p-4 text-sm z-50">
             <div class="flex justify-between mb-2">
-              <button class="bg-yellow-400 px-4 py-1 rounded hover:bg-yellow-300 text-sm font-medium">Sign In</button>
-              <span class="text-xs text-gray-500 self-center">New customer? <a href="#" class="text-blue-600">Start here</a></span>
+              <button class="bg-yellow-400 px-4 py-1 rounded hover:bg-yellow-300 text-sm font-medium"><a href="/views/auth/login.php">Sign In</a></button>
+              <span class="text-xs text-gray-500 self-center">New customer? <a href="/views/auth/signup.php" class="text-blue-600">Start here</a></span>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div>
