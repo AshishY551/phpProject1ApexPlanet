@@ -1,0 +1,1 @@
+ <!-- register.php  ✅ POST signup logic -->
