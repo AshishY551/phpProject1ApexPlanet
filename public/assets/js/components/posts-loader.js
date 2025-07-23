@@ -18,10 +18,31 @@ function fetchPosts(filters = {}) {
   // fetch(`/modules/posts/read.php?${params}`)
   //   ✅ Why?
   // Because public/ is  web root, and modules/ is one level above it. So we use ../ to go up a directory.
+
+  // Your API (read.php) returns this correct, modern, structured JSON:
+  // But your old JavaScript logic (posts-loader.js) was expecting the wrong structure, like this:
   fetch(`/../modules/posts/read.php?${params}`)
     .then(res => res.json())
     .then(data => {
-      if (!data || data.length === 0) {
+      // if (!data || data.length === 0) {
+      //   loadMoreBtn.classList.add('hidden');
+      //   if (offset === 0) {
+      //     postsContainer.innerHTML = `
+      //       <div class="col-span-full text-center text-gray-500 py-12">
+      //         ❌ No posts found. Try adjusting filters.
+      //       </div>
+      //     `;
+      //   }
+      //   return;
+      // }
+
+      // // Append each post
+      // data.forEach(post => {
+      //   postsContainer.innerHTML += renderPostCard(post);
+      // });
+
+      // updated
+      if (!data.success || !Array.isArray(data.posts) || data.posts.length === 0) {
         loadMoreBtn.classList.add('hidden');
         if (offset === 0) {
           postsContainer.innerHTML = `
@@ -34,9 +55,13 @@ function fetchPosts(filters = {}) {
       }
 
       // Append each post
-      data.forEach(post => {
+      data.posts.forEach(post => {
+      //         🧪 Bonus: Debug Tip
+      // To quickly catch this kind of mismatch in future:
+        console.log('[DEBUG POST]', post);  // log inside forEach
         postsContainer.innerHTML += renderPostCard(post);
       });
+
 
       offset += limit;
       loadMoreBtn.classList.remove('hidden');
@@ -111,9 +136,11 @@ function renderPostCard(post) {
 
           <div class="flex items-center justify-start text-xs text-gray-500 dark:text-gray-400 space-x-4">
             <span>👤 ${escapeHTML(post.author || 'Unknown')}</span>
-            <span>🕒 ${escapeHTML(post.posted || 'Some time ago')}</span>
+            <!-- Removed <span>🕒 $!!{escapeHTML(post.posted || 'Some time ago')}</span>-->
+            <span>🕒 ${escapeHTML(post.formatted_date || 'Some time ago')}</span>
             <span>👁️ ${post.views || 0} views</span>
-            <span>💬 ${post.comments || 0}</span>
+            <!--Removed <span>💬 $!!{post.comments || 0}</span>-->
+            <span>💬 0 comments</span> <!-- placeholder for now -->
           </div>
 
           <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
@@ -151,3 +178,19 @@ loadMoreBtn?.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   fetchPosts();
 });
+
+
+
+
+
+// | Area            | Old Code    | Problem              | Fix                  |
+// | --------------- | ----------- | -------------------- | -------------------- |
+// | `post.posted`   | Not in JSON | Wrong field          | Use `formatted_date` |
+// | `post.comments` | Undefined   | Missing from backend | Use placeholder      |
+
+// 🔁 Replaced this :
+// <span>🕒 ${escapeHTML(post.posted || 'Some time ago')}</span>
+// <span>💬 ${post.comments || 0}</span>
+// ✅ With:
+// <span>🕒 ${escapeHTML(post.formatted_date || 'Some time ago')}</span>
+// <span>💬 0 comments</span> <!-- placeholder for now -->

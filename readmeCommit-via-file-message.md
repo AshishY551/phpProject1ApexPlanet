@@ -282,3 +282,46 @@ git push origin v1.0-cropper
 Let me know if you want to tag something now — I can help pick the right hash and format.
 
 🕒 **Created on:** July 19, 2025 Night
+
+🕒 **Created on:** July 23, 2025 Day
+
+To **tag the commit** `55fbd6dc32a9f372b9a277f7269edac90efa2300`, you can use the following Git command:
+
+---
+
+### ✅ **Tag the Commit**
+
+```bash
+git tag -a v1.0 -m "Tagging commit 55fbd6d for release v1.0" 55fbd6dc32a9f372b9a277f7269edac90efa2300
+```
+
+- `v1.0`: This is your tag name (you can change it to anything, like `blog-create-working`).
+- `-a`: Means you're creating an **annotated tag**.
+- `-m`: A message describing the tag.
+- `55fbd6d...`: The full or short commit hash.
+
+---
+
+### 🚀 **Push the Tag to GitHub**
+
+```bash
+git push origin v1.0
+```
+
+If you want to push **all tags**:
+
+```bash
+git push origin --tags
+```
+
+---
+
+### 📌 To See Tags
+
+```bash
+git tag
+```
+
+---
+
+🕒 **Created on:** July 23, 2025 Day
