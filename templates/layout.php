@@ -70,6 +70,9 @@
       <!-- ✅ Place sections/modals/edit-post-modal.php:
       include in layout or middle-content.php: -->
       <?php include __DIR__ . '/../sections/modals/edit-post-modal.php'; ?>
+      <!-- Delete Modal HTML -->
+      <?php include __DIR__ . '/../sections/modals/delete-confirm.php'; ?>
+
 
 
       <?php
@@ -208,8 +211,9 @@
 
 
 
+  <script src="/public/assets/js/components/delete-post-modal.js" defer></script>
 
-
+  <!-- <!?= $scripts ?? '' ?> -->
 
 </body>
 

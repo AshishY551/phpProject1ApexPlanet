@@ -325,3 +325,183 @@ git tag
 ---
 
 🕒 **Created on:** July 23, 2025 Day
+
+🕒 **Created on:** July 23, 2025 afternoon
+Great — you're **very close** to resolving this. Based on your recent data from:
+
+```
+http://apex.local/modules/posts/read.php?limit=6&offset=0
+```
+
+We see that the **API is working correctly** — it’s returning `success: true` and valid post data.
+
+But on:
+
+```
+http://apex.local/public/index.php
+```
+
+You still see:
+
+> ⚠️ Failed to load posts. Please try again later.
+
+---
+
+### ✅ Root Cause:
+
+Your `read.php` is returning this structure:
+
+```json
+{
+  "success": true,
+  "count": 5,
+  "posts": [ ... ]
+}
+```
+
+But your `posts-loader.js` is still using the **old logic** assuming the `data` is an array directly:
+
+```js
+.then(data => {
+  if (!data || data.length === 0) {
+    ...
+  }
+
+  data.forEach(post => {
+    postsContainer.innerHTML += renderPostCard(post);
+  });
+});
+```
+
+✅ So it's **trying to loop over an object** instead of the `data.posts` array.
+
+---
+
+### ✅ Fix Now (posts-loader.js)
+
+Replace this block inside your `fetchPosts()`:
+
+```js
+.then(data => {
+  if (!data || data.length === 0) {
+    ...
+  }
+
+  data.forEach(post => {
+    postsContainer.innerHTML += renderPostCard(post);
+  });
+});
+```
+
+✅ **With this:**
+
+```js
+.then(data => {
+  if (!data.success || !Array.isArray(data.posts) || data.posts.length === 0) {
+    loadMoreBtn.classList.add('hidden');
+    if (offset === 0) {
+      postsContainer.innerHTML = `
+        <div class="col-span-full text-center text-gray-500 py-12">
+          ❌ No posts found. Try adjusting filters.
+        </div>
+      `;
+    }
+    return;
+  }
+
+  data.posts.forEach(post => {
+    postsContainer.innerHTML += renderPostCard(post);
+  });
+
+  offset += limit;
+  loadMoreBtn.classList.remove('hidden');
+})
+```
+
+---
+
+### 💡 Why This Works:
+
+- `data.success` ensures API call succeeded
+- `data.posts` is the actual array of posts — not `data` directly
+- It avoids crashing the loop or trying to iterate `undefined`
+
+---
+
+### 📌 Optional Improvements (Now or Later)
+
+| Feature              | Suggestion                                                           |
+| -------------------- | -------------------------------------------------------------------- |
+| `excerpt` is null    | In `renderPostCard`, fallback to `short_desc` if `excerpt` is null   |
+| `views` is 0         | In future, increment view count per page load or track via analytics |
+| `likes` is 0         | Build AJAX like handler or use server-side counter                   |
+| `image` not loading? | Ensure path is `/public/uploads/posts/` + image name                 |
+
+---
+
+-----------------------------------------------2
+✅ Yes, **you _should absolutely make these updates_** — even though it's "working" **now**, here's **why it's still risky and unclean without them**:
+
+---
+
+### 🚨 1. **Hidden Errors Still Exist**
+
+#### 🔥 The line:
+
+```js
+<span>🕒 ${escapeHTML(post.posted || "Some time ago")}</span>
+```
+
+✔ Works _only_ because JavaScript falls back to `'Some time ago'`,
+❌ But `post.posted` **doesn't exist** — it's actually `formatted_date`.
+
+This is:
+
+- **Confusing for future debugging**
+- **Risky if someone removes the fallback**
+- **Poor practice in a high-quality project (like yours)**
+
+---
+
+### 🧨 2. `post.comments` is Completely Missing
+
+```js
+<span>💬 ${post.comments || 0}</span>
+```
+
+- No `comments` in the API response.
+- `post.comments` is **undefined** — this can silently fail in some environments (like stricter JS or bundlers).
+- It will **break in future**, especially once you shift to server-side rendering or hydrate data.
+
+---
+
+### ✅ What Should You Do?
+
+Update these **2 lines**:
+
+#### 🔁 Replace:
+
+```js
+<span>🕒 ${escapeHTML(post.posted || 'Some time ago')}</span>
+<span>💬 ${post.comments || 0}</span>
+```
+
+#### ✅ With:
+
+```js
+<span>🕒 ${escapeHTML(post.formatted_date || 'Some time ago')}</span>
+<span>💬 0 comments</span> <!-- placeholder for now -->
+```
+
+---
+
+### 🧠 Summary
+
+| Area            | Old Code    | Problem              | Fix                  |
+| --------------- | ----------- | -------------------- | -------------------- |
+| `post.posted`   | Not in JSON | Wrong field          | Use `formatted_date` |
+| `post.comments` | Undefined   | Missing from backend | Use placeholder      |
+
+---
+
+🕒 **Created on:** July 23, 2025 afternoon

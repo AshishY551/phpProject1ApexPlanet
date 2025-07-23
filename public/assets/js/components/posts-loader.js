@@ -156,10 +156,16 @@ function renderPostCard(post) {
                       data-id="${post.id}" onclick="openEditPostModal(this)">
                 ✏️ Edit
               </button>
-              <button class="delete-post-btn px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200"
-                      data-id="${post.id}">
+              <!--<button class="delete-post-btn px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200"
+                      data-id="$!!{post.id}">
+                🗑️ Delete
+              </button>-->
+              <button onclick="confirmDelete(${post.id})"
+                      class="delete-post-btn px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200">
                 🗑️ Delete
               </button>
+              
+
             </div>
           </div>
         </div>
