@@ -74,6 +74,7 @@
             <!?php endfor; ?>
         </div> -->
 
+
         <!-- 3. AJAX-Powered Dynamic Posts Grid -->
         <div id="postsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- JS will dynamically insert post cards here -->
@@ -85,6 +86,7 @@
                 Load More
             </button>
         </div>
+
 
 
         <!-- 4. Add New Post Button -->

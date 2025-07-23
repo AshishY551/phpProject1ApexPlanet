@@ -54,31 +54,6 @@ function fetchPosts(filters = {}) {
     });
 }
 
-// 🔐 5. Utility: Escape HTML (✅ Place this just before renderPostCard)
-// function escapeHTML(str) {
-//   return String(str)
-//     .replace(/&/g, "&amp;")
-//     .replace(/</g, "&lt;")
-//     .replace(/>/g, "&gt;")
-//     .replace(/"/g, "&quot;")
-//     .replace(/'/g, "&#039;");
-// }
-
-function escapeHTML(str) {
-  return String(str).replace(/[&<>"']/g, function (tag) {
-    const chars = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#039;',
-    };
-    return chars[tag] || tag;
-  });
-}
-
-// 🎨 6. Render Post Card (✅ Place this at the bottom)
-// 🔄 Built a JS equivalent of post-card.php (used in AJAX mode via posts-loader.js)
 function renderPostCard(post) {
   const image = post.image
     ? `/public/uploads/posts/${post.image}`
@@ -86,15 +61,14 @@ function renderPostCard(post) {
 
   return `
     <div class="post-card-wrapper" data-id="${post.id}">
-      <div id="post-card" class="group relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] overflow-hidden">
+      <div class="group relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] overflow-hidden">
 
-        <!-- 🖼 Featured Image -->
         <div class="relative w-full h-52 overflow-hidden">
           <img src="${image}" alt="Post Thumbnail"
             class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-in-out" />
 
           <span class="absolute top-3 left-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-            ${escapeHTML(post.category || 'Uncategorized')}
+            ${post.category || 'Uncategorized'}
           </span>
 
           ${post.featured ? `
@@ -103,21 +77,20 @@ function renderPostCard(post) {
             </span>` : ''}
         </div>
 
-        <!-- 📄 Post Content -->
         <div class="p-4 space-y-3">
           <h2 class="text-lg font-semibold text-gray-800 dark:text-white group-hover:text-indigo-600 transition-colors line-clamp-2">
-            ${escapeHTML(post.title || 'Untitled Post')}
+            ${post.title}
           </h2>
 
           <div class="flex items-center justify-start text-xs text-gray-500 dark:text-gray-400 space-x-4">
-            <span>👤 ${escapeHTML(post.author || 'Unknown')}</span>
-            <span>🕒 ${escapeHTML(post.posted || 'Some time ago')}</span>
+            <span>👤 ${post.author || 'Unknown'}</span>
+            <span>🕒 ${post.posted || 'Some time ago'}</span>
             <span>👁️ ${post.views || 0} views</span>
             <span>💬 ${post.comments || 0}</span>
           </div>
 
           <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
-            ${escapeHTML(post.excerpt || 'No preview available...')}
+            ${post.excerpt || 'No preview available...'}
           </p>
 
           <div class="flex items-center justify-between pt-3">
@@ -126,7 +99,7 @@ function renderPostCard(post) {
             </a>
             <div class="flex items-center space-x-2">
               <button class="edit-post-btn px-3 py-[4px] text-xs bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition duration-200"
-                      data-id="${post.id}" onclick="openEditPostModal(this)">
+                      data-id="${post.id}">
                 ✏️ Edit
               </button>
               <button class="delete-post-btn px-3 py-[4px] text-xs bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-200"
@@ -140,7 +113,6 @@ function renderPostCard(post) {
     </div>
   `;
 }
-
 
 // 🔁 Load More Handler
 loadMoreBtn?.addEventListener('click', () => {

@@ -15,14 +15,25 @@ $limit    = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
 $offset   = isset($_GET['offset']) ? (int)$_GET['offset'] : 0;
 
 $params = [];
+// $sql = "SELECT 
+//             posts.id, posts.title, posts.slug, posts.description,
+//             posts.category, posts.status, posts.image, posts.tags,
+//             posts.created_at, posts.updated_at,
+//             users.username AS author
+//         FROM posts
+//         LEFT JOIN users ON posts.user_id = users.id
+//         WHERE 1=1";
+
+// After Table updation in database posts table
 $sql = "SELECT 
-            posts.id, posts.title, posts.slug, posts.description,
-            posts.category, posts.status, posts.image, posts.tags,
-            posts.created_at, posts.updated_at,
-            users.username AS author
-        FROM posts
-        LEFT JOIN users ON posts.user_id = users.id
-        WHERE 1=1";
+    posts.id, posts.title, posts.slug, posts.excerpt,
+    posts.category, posts.status, posts.image, posts.tags,
+    posts.likes, posts.views, posts.created_at, posts.updated_at,
+    users.username AS author
+FROM posts
+LEFT JOIN users ON posts.user_id = users.id
+WHERE 1=1";
+
 
 // 🔎 Optional category filter
 if (!empty($category)) {
@@ -37,12 +48,14 @@ if (!empty($status)) {
 }
 
 // 🔍 Search (title, description, tags)
+// ✅ 2. Update Search Clause to Use excerpt Instead of description
 if (!empty($search)) {
-    $sql .= " AND (posts.title LIKE ? OR posts.description LIKE ? OR posts.tags LIKE ?)";
+    $sql .= " AND (posts.title LIKE ? OR posts.excerpt LIKE ? OR posts.tags LIKE ?)";
     $params[] = "%$search%";
     $params[] = "%$search%";
     $params[] = "%$search%";
 }
+
 
 // 📊 Sorting options
 switch ($sort) {
@@ -74,7 +87,9 @@ try {
         }
 
         $post['formatted_date'] = date('M d, Y', strtotime($post['created_at']));
-        $post['short_desc'] = substr(strip_tags($post['description']), 0, 120) . '...';
+        // ✅ 3. Fix the Fallback Short Description Generation
+        // $post['short_desc'] = substr(strip_tags($post['description']), 0, 120) . '...';
+        $post['short_desc'] = $post['excerpt'] ?? '';
     }
 
     echo json_encode([
