@@ -1,39 +1,28 @@
-✅`feat: Add advanced login page UI (fully responsive + animations)`
+✨ Revamped Login & Signup Pages with Modern UI, OAuth UI, and UX Enhancements
 
- 🎯 Summary:
+🔐 Login Page:
+- Replaced basic background with a vibrant, responsive gradient (dark mode supported)
+- Added OAuth provider placeholders (Google, Facebook, GitHub, Passkey) with icon buttons
+- Switched from `<body>` to scoped `<section>` for semantic and modular layout
+- Integrated Tailwind-powered animations and transitions for smoother UX
+- Corrected stylesheet and script paths (auth.css & auth.js)
+- Improved form spacing, label alignment, and focus states
+- Added 'Remember Me' checkbox and ‘Forgot password’ link (UI only for now)
+- Prepared for future backend integration (OAuth2, validation errors, loader states)
 
-Implemented a highly polished, future-ready login interface at `/views/auth/login.php` built to meet industry-level UI/UX and scalability standards.
+📝 Signup Page:
+- Applied consistent UI style and background to match the Login page
+- Ensured responsive form design across mobile/tablet/desktop
+- Added redirect text for existing users (Already have an account? Login)
+- Used dark mode and accessibility-friendly contrast colors
+- Inserted consistent Tailwind classes for form input, focus, transitions
 
- 🔧 Key Features:
+🧠 General Improvements:
+- Ensured mobile responsiveness, accessibility, and dark mode support
+- Refactored layout for future header/footer insertion
+- Committed to advanced frontend principles (animations, transitions, responsive spacing)
+- Prepared structure for industry-ready, scalable user auth interface
 
-* **Advanced UI Design** using TailwindCSS v2 with smooth `animate-fadeIn` effects.
-* **Fully Responsive Layout** (mobile → desktop) for high-end client readiness.
-* **Dark Mode Support** with contrast-optimized input fields and labels.
-* **User-friendly Inputs** with consistent spacing, border styles, hover, and focus interactions.
-* **"Remember Me" & "Forgot Password" UI** for full-feature auth flow.
-* **Call-to-action link** to `/views/auth/signup.php` for registration redirect.
-* **Modular file separation**: CSS → `/public/assets/css/authentication/auth.css`, JS → `/public/assets/js/authentication/auth.js`.
-
- 💡 Technologies Used:
-
-* TailwindCSS (CDN, utility-first responsive design)
-* HTML5 Semantic Markup
-* Progressive enhancement via dark mode classes
-* Custom CSS and JS for authentication logic (deferred for performance)
-
- 🔐 Security Prep:
-
-* All fields properly `required`, email validated
-* JS file (`auth.js`) pre-linked for future integration of:
-
-  * AJAX login
-  * Token-based session
-  * CSRF protection (future enhancement)
-
- 📈 Future-Ready Additions (UI already supports):
-
-* 🔄 Password reset modal
-* 📲 2FA/MFA step (email or OTP)
-* ⛔ Account lockout after multiple failed attempts
-* 🔐 Social login buttons (Google/GitHub)
-* 🧠 Error feedback and server-side validation display (to be integrated in backend)
+🚀 Outcome:
+- Fully responsive, fast-loading, attractive login/signup pages with future OAuth readiness
+- Aligns with high-value client requirements and best frontend engineering practices

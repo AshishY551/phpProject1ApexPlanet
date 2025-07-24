@@ -18,8 +18,8 @@ include_once __DIR__ . '/../../templates/header.php'; // optional
         <!-- 🧾 Signup Form -->
         <form id="signupForm" class="space-y-5" method="POST" action="#">
             <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">👤 Full Name</label>
-                <input type="text" name="fullname" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white focus:ring-2 ring-indigo-500" placeholder="John Doe" required>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">👤 Username</label>
+                <input type="text" name="username" id="username" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white focus:ring-2 ring-indigo-500" placeholder="your_username -John Doe" required>
             </div>
 
             <div>
