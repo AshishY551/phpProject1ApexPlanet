@@ -85,6 +85,9 @@
             <a href="/views/auth/signup.php" class="text-indigo-600 hover:underline dark:text-indigo-400">Sign up</a>
         </p>
     </div>
+    <!-- 🔔 Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 hidden text-white bg-green-500 dark:bg-green-600 px-4 py-2 rounded-lg shadow-lg z-50 transition duration-300 ease-in-out"></div>
+
 </section> <!-- </div> -->
 <!-- <script src="/public/assets/js/authentication/auth.js" defer></script>
 </body>

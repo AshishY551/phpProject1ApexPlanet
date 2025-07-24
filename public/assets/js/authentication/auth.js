@@ -1,70 +1,87 @@
-// ✅ Handles both signup & login UI logic
+// ✅ Advanced auth.js with toast, animations, field control
 // /public/assets/js/authentication/auth.js
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Handle Signup form
-  const signupForm = document.getElementById('signupForm');
-  if (signupForm) {
-    signupForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(signupForm);
-      const submitBtn = signupForm.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Registering...";
+function showToast(message, success = true) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
 
-      try {
-        const res = await fetch('/modules/users/register.php', {
-          method: 'POST',
-          body: formData
-        });
-        const data = await res.json();
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.remove("bg-red-500", "bg-green-500");
+  toast.classList.add(success ? "bg-green-500" : "bg-red-500");
 
-        if (data.success) {
-          alert(data.message);
-          signupForm.reset();
-        } else {
-          alert(data.message || "❌ Registration failed.");
-        }
-      } catch (err) {
-        console.error(err);
-        alert("❌ Network error.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "🚀 Sign Up";
-      }
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 4000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 👁️ Toggle Password Visibility
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordField = document.getElementById("password");
+
+  if (togglePassword && passwordField) {
+    togglePassword.addEventListener("click", () => {
+      const type =
+        passwordField.getAttribute("type") === "password" ? "text" : "password";
+      passwordField.setAttribute("type", type);
+      togglePassword.textContent = type === "password" ? "👁️" : "🙈";
     });
   }
 
-  // Handle Login form
-  const loginForm = document.getElementById('loginForm');
-  if (loginForm) {
-    loginForm.addEventListener('submit', async (e) => {
+  // 🔐 Handle Signup
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(loginForm);
-      const submitBtn = loginForm.querySelector('button[type="submit"]');
+      const submitBtn = signupForm.querySelector("button[type='submit']");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Registering...";
+
+      const formData = new FormData(signupForm);
+      try {
+        const res = await fetch("/modules/users/register.php", {
+          method: "POST",
+          body: new URLSearchParams(formData),
+        });
+        const data = await res.json();
+        showToast(data.message, data.success);
+        if (data.success) signupForm.reset();
+      } catch (err) {
+        showToast("❌ Network error. Please try again.", false);
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "🚀 Sign Up";
+    });
+  }
+
+  // 🔐 Handle Login
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const submitBtn = loginForm.querySelector("button[type='submit']");
       submitBtn.disabled = true;
       submitBtn.textContent = "Signing in...";
 
+      const formData = new FormData(loginForm);
       try {
-        const res = await fetch('/modules/users/login.php', {
-          method: 'POST',
-          body: formData
+        const res = await fetch("/modules/users/login.php", {
+          method: "POST",
+          body: new URLSearchParams(formData),
         });
         const data = await res.json();
-
+        showToast(data.message, data.success);
         if (data.success) {
-          alert(data.message);
-          window.location.href = "/views/dashboard.php";
-        } else {
-          alert(data.message || "❌ Login failed.");
+          setTimeout(() => window.location.href = "/views/dashboard.php", 1500);
         }
       } catch (err) {
-        console.error(err);
-        alert("❌ Network error.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "🚀 Sign In";
+        showToast("❌ Network error. Please try again.", false);
       }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "🚀 Sign In";
     });
   }
 });

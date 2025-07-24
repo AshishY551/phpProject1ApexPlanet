@@ -1,24 +1,14 @@
-🔐 Add advanced Login page UI (views/auth/login.php)
+✨ Add advanced auth.js for frontend login/signup logic
 
-✅ Features:
-- Full-page responsive login UI using Tailwind CSS
-- Background gradient with light/dark mode support
-- Animated form container with smooth fade-in
-- Email & password fields with focus and accessibility enhancements
-- "Remember me" checkbox + "Forgot password" link
-- Submit button with hover/transition effect
-- OAuth section: placeholders for Google, Facebook, GitHub, and Passkey login (for future OAuth integration)
-- Inline validation and disabled states ready for JS integration
+✅ Handles:
+- Signup form POST via AJAX to /register.php
+- Login form POST via AJAX to /login.php
+- Button loading states (disable, show text)
+- Alert messages for success/failure
+- Auto-redirect to dashboard on login
 
-📁 File Created:
-- views/auth/login.php
+📁 File: /public/assets/js/authentication/auth.js
 
-🎨 UI Enhancements:
-- Improved background gradient compared to sign-up
-- Button hover transitions
-- Icon-based third-party login UI (future OAuth-ready)
-
-🚀 Ready for:
-- Integration with `/modules/users/login.php`
-- Session handling + redirection
-- JS logic from `/public/assets/js/authentication/auth.js`
+🧠 Future Ready:
+- Can be extended with toast notifications
+- 2FA, password toggle, field animations, etc.
