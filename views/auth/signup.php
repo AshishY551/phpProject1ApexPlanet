@@ -12,6 +12,9 @@ include_once __DIR__ . '/../../templates/header.php'; // optional
         <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white">🚀 Create Your Account</h2>
         <p class="text-center text-gray-600 dark:text-gray-400">Join our community and unlock exclusive features!</p>
 
+
+
+
         <!-- 🧾 Signup Form -->
         <form id="signupForm" class="space-y-5" method="POST" action="#">
             <div>
@@ -50,6 +53,31 @@ include_once __DIR__ . '/../../templates/header.php'; // optional
                 Already have an account? <a href="/views/auth/login.php" class="text-indigo-600 hover:underline">Login here</a>
             </p>
         </form>
+
+
+        <!-- 🌍 OAuth Providers -->
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300 dark:border-gray-600">
+            <span class="px-4 text-sm text-gray-500 dark:text-gray-400">or</span>
+            <hr class="flex-grow border-gray-300 dark:border-gray-600">
+        </div>
+        <div class="flex justify-center gap-4">
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/google.svg" alt="Google" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/facebook.svg" alt="Facebook" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/github.svg" alt="GitHub" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/passkey.svg" alt="Passkey" class="h-5 w-5">
+            </button>
+        </div>
+
+
+
     </div>
 </section>
 

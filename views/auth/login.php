@@ -1,6 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
 <!-- ✅ Full login page -->
+
+<?php include __DIR__ . '/../../templates/header.php'; ?>
+
 
 <head>
     <meta charset="UTF-8" />
@@ -10,12 +13,22 @@
     <link rel="stylesheet" href="/public/assets/css/authentication/auth.css">
 </head>
 
-<body class="bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center justify-center px-4">
+
+<!-- <body class="bg-gradient-to-br from-indigo-500 via-purple-200 to-pink-400 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center justify-center px-4"> -->
+
+<!-- <body class="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-[#e0eafc] to-[#cfdef3] dark:from-gray-900 dark:to-gray-800 overflow-hidden"> -->
+<!-- 🌟 Background Animation -->
+<!-- <div class="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-200 via-purple-200 to-pink-200 opacity-30 dark:opacity-10 animate-pulse"> -->
+
+
+<section class="bg-gradient-to-br from-indigo-500 via-purple-200 to-pink-400 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center justify-center px-4">
     <div class="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 space-y-6 animate-fadeIn">
         <div class="text-center">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white">🔐 Login to Your Account</h2>
             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Enter your credentials to continue</p>
         </div>
+
+
 
         <form id="loginForm" class="space-y-4" method="POST">
             <div>
@@ -44,13 +57,40 @@
             </button>
         </form>
 
+        <!-- 🌍 OAuth Providers -->
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300 dark:border-gray-600">
+            <span class="px-4 text-sm text-gray-500 dark:text-gray-400">or</span>
+            <hr class="flex-grow border-gray-300 dark:border-gray-600">
+        </div>
+        <div class="flex justify-center gap-4">
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/google.svg" alt="Google" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/facebook.svg" alt="Facebook" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/microsoft.svg" alt="Microsoft" class="h-5 w-5">
+            </button>
+            <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
+                <img src="/public/assets/images/oauth/passkey.png" alt="Passkey" class="h-5 w-5">
+            </button>
+        </div>
+
+
+
         <p class="text-sm text-center text-gray-500 dark:text-gray-400">
             Don’t have an account?
             <a href="/views/auth/signup.php" class="text-indigo-600 hover:underline dark:text-indigo-400">Sign up</a>
         </p>
     </div>
-
-    <script src="/public/assets/js/authentication/auth.js" defer></script>
+</section> <!-- </div> -->
+<!-- <script src="/public/assets/js/authentication/auth.js" defer></script>
 </body>
 
-</html>
+</html> -->
+
+<script src="/public/assets/js/authentication/auth.js" defer></script>
+</body>
+<?php include __DIR__ . '/../../templates/footer.php'; ?>
