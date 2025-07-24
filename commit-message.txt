@@ -1,28 +1,41 @@
-✨ Revamped Login & Signup Pages with Modern UI, OAuth UI, and UX Enhancements
+🔐 Setup: Advanced Auth Module – Folder Structure Finalized, Register Logic Added
 
-🔐 Login Page:
-- Replaced basic background with a vibrant, responsive gradient (dark mode supported)
-- Added OAuth provider placeholders (Google, Facebook, GitHub, Passkey) with icon buttons
-- Switched from `<body>` to scoped `<section>` for semantic and modular layout
-- Integrated Tailwind-powered animations and transitions for smoother UX
-- Corrected stylesheet and script paths (auth.css & auth.js)
-- Improved form spacing, label alignment, and focus states
-- Added 'Remember Me' checkbox and ‘Forgot password’ link (UI only for now)
-- Prepared for future backend integration (OAuth2, validation errors, loader states)
+✅ Auth System Directory Structure Finalized:
+- /views/auth/ → Contains signup.php, login.php (UI pages), future pages (verify.php, forgot.php, reset.php)
+- /sections/modals/ → Includes signup-modal.php & login-modal.php (modal versions of forms)
+- /modules/users/ → Added register.php for signup POST handling (secure, scalable)
+- /public/assets/js/authentication/ → Created auth.js for interactive form handling
+- /public/assets/css/authentication/ → Added auth.css for custom auth styles
+- /public/assets/images/oauth/ → Added SVG icons for OAuth placeholders (Google, Facebook, GitHub, Passkey)
 
-📝 Signup Page:
-- Applied consistent UI style and background to match the Login page
-- Ensured responsive form design across mobile/tablet/desktop
-- Added redirect text for existing users (Already have an account? Login)
-- Used dark mode and accessibility-friendly contrast colors
-- Inserted consistent Tailwind classes for form input, focus, transitions
+📦 DB & Backend:
+- Added secure `register.php` using:
+  • Bcrypt for password hashing
+  • Email and password validation
+  • Duplicate email check
+  • Unique slug generation using helper
+  • JSON-based response system
+- Input field mapped from `fullname` → to `username` for consistency with DB
+- Used `generateUniqueSlug($pdo, $username, 'users')` for unique profile slugs
 
-🧠 General Improvements:
-- Ensured mobile responsiveness, accessibility, and dark mode support
-- Refactored layout for future header/footer insertion
-- Committed to advanced frontend principles (animations, transitions, responsive spacing)
-- Prepared structure for industry-ready, scalable user auth interface
+🗃️ Database Schema Updates:
+- Added `slug VARCHAR(100)` column to `users` table
+- Added `UNIQUE(slug)` constraint for uniqueness
+- Cleaned up duplicate index (slug_2) from users table
 
-🚀 Outcome:
-- Fully responsive, fast-loading, attractive login/signup pages with future OAuth readiness
-- Aligns with high-value client requirements and best frontend engineering practices
+🎨 UI Enhancements:
+- Updated `<input name="fullname">` in signup.php to align with backend slug generation
+- Added animated "OR" divider and OAuth login placeholders
+- Improved signup & login page backgrounds for more attractive professional-grade UI
+- All inputs use animated Tailwind transitions, dark mode support, and validation-ready design
+
+📁 Status:
+✅ Folder structure is now scalable, industry-standard, and future-ready
+✅ Register functionality secure and working
+✅ Database ready for all auth features (slug, username, role-based auth, etc.)
+
+🧱 Ready for:
+🔜 login.php backend
+🔜 CSRF token integration
+🔜 Email verification & 2FA extension (already designed for future)
+

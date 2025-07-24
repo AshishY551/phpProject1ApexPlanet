@@ -69,10 +69,10 @@ include_once __DIR__ . '/../../templates/header.php'; // optional
                 <img src="/public/assets/images/oauth/facebook.svg" alt="Facebook" class="h-5 w-5">
             </button>
             <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
-                <img src="/public/assets/images/oauth/github.svg" alt="GitHub" class="h-5 w-5">
+                <img src="/public/assets/images/oauth/microsoft.svg" alt="Microsoft" class="h-5 w-5">
             </button>
             <button class="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-3 rounded-lg shadow hover:shadow-md transition">
-                <img src="/public/assets/images/oauth/passkey.svg" alt="Passkey" class="h-5 w-5">
+                <img src="/public/assets/images/oauth/passkey.png" alt="Passkey" class="h-5 w-5">
             </button>
         </div>
 
