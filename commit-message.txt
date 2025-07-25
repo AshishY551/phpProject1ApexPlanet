@@ -1,20 +1,27 @@
-🔧 Enhanced Signup Page UI/UX | 🎨 Added Toast Notifications + Future-Ready OAuth Icons
+✨ Add Modal-based Login & Signup Components (Reusable & Responsive)
 
-✅ Integrated advanced animated toast notification system for real-time feedback (replaced alert-based fallback)
-✅ Updated /views/auth/signup.php:
-   - Inserted <div id="toast"> for toast display (bottom-right, styled)
-   - Ensured compatibility with upgraded /public/assets/js/authentication/auth.js logic
-✅ OAuth Icon Buttons (Google, Facebook, Microsoft, Passkey) added for future integration
-✅ Responsive layout with Tailwind CSS for accessibility, mobile-friendliness, and scalability
-✅ Signup form fields enhanced with visually appealing UX design (rounded, colored focus, full validation-ready)
-✅ Maintained footer and header inclusion for modular templating
-✅ Fully meets project constraints: fast, modern, scalable, secure, attractive UI, industry-grade readiness
+- Added `sections/modals/signup-modal.php`: 
+  ✅ Full-featured signup form wrapped in a responsive modal
+  ✅ Matches full page version (fields, validation-ready)
+  ✅ Includes modal-switch to login
+  ✅ Designed for Tailwind + Dark Mode
 
-📁 Affected Files:
-- /views/auth/signup.php
-- /public/assets/js/authentication/auth.js (previous commit)
+- Added `sections/modals/login-modal.php`: 
+  ✅ Full-featured login form in modal
+  ✅ OAuth provider icons included
+  ✅ Password toggle ready
+  ✅ Switches to signup modal if needed
 
-🔮 Future Ready:
-- Can enable OAuth2 backend easily
-- Prepared for extensions like phone login, OTP, etc.
+- Modal design follows industry UI patterns:
+  ✅ Responsive on all screens
+  ✅ Reusable across any page
+  ✅ Tailwind-based with dark mode and animation support
 
+- Prepared for future integrations:
+  🔐 2FA (Two Factor Auth)
+  🔁 AJAX submission via auth.js
+  ☁️ OAuth flow expansion
+  🔧 Toggle function to open/close (`toggleModal(id)`)
+
+🔧 Next Step: Include these in `layout.php` or specific views,
+     and wire them into `auth.js` for modal-based login/signup UX.

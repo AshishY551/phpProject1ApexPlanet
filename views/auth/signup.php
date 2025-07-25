@@ -1,11 +1,10 @@
 <?php
-//  ✅ Full signup page 
-// views/auth/signup.php
-
 include_once __DIR__ . '/../../templates/header.php'; // optional
 ?>
 
 <!-- 🌌 SIGNUP PAGE UI -->
+<!-- //  ✅ Full signup page 
+// views/auth/signup.php -->
 <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6">
     <div class="w-full max-w-lg bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 space-y-6 animate__animated animate__fadeInDown">
 
@@ -87,3 +86,6 @@ include_once __DIR__ . '/../../templates/header.php'; // optional
 <?php
 include_once __DIR__ . '/../../templates/footer.php'; // optional
 ?>
+
+<!-- ✅ Add this line -->
+<script src="/public/assets/js/authentication/auth.js"></script>

@@ -16,6 +16,9 @@ function showToast(message, success = true) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // for debug
+  console.log("auth.js loaded ✅");
+
   // 👁️ Toggle Password Visibility
   const togglePassword = document.getElementById("togglePassword");
   const passwordField = document.getElementById("password");
@@ -44,11 +47,37 @@ document.addEventListener("DOMContentLoaded", () => {
           method: "POST",
           body: new URLSearchParams(formData),
         });
-        const data = await res.json();
-        showToast(data.message, data.success);
-        if (data.success) signupForm.reset();
+        // const data = await res.json();
+        // showToast(data.message, data.success);
+        // if (data.success) signupForm.reset();
+        const text = await res.text();
+        let data;
+
+        try {
+          data = JSON.parse(text);
+        } catch (err) {
+          console.error("❌ Server response is not valid JSON:", text);
+          showToast("❌ Server error: Unexpected response.", false);
+          return;
+        }
+
+        // 👇 Main toast message (from server or fallback)
+        showToast(data.message || "✅ Account created!", data.success);
+
+        // 👇 Optional success flow
+        if (data.success) {
+          showToast("🎉 Signup successful! Redirecting to login...", true);
+          setTimeout(() => {
+            window.location.href = "/views/auth/login.php";
+          }, 1500); // Wait 1.5 seconds so toast is visible
+        }else {
+          showToast(data.message, false);
+          signupForm.reset();
+        }
+
+
       } catch (err) {
-        showToast("❌ Network error. Please try again.", false);
+        showToast("❌ Network error - 🔐SIGNUP. Please try again.", false);
       }
 
       submitBtn.disabled = false;
@@ -77,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => window.location.href = "/views/dashboard.php", 1500);
         }
       } catch (err) {
-        showToast("❌ Network error. Please try again.", false);
+        showToast("❌ Network error - 🔐LOGIN. Please try again.", false);
       }
 
       submitBtn.disabled = false;
@@ -118,7 +147,7 @@ async function handleAuthForm(formId, url, successRedirect = null, buttonText = 
         }
       }
     } catch (err) {
-      showToast("❌ Network error. Please try again.", false);
+      showToast("❌ Network error - 🔁MODAL FORM . Please try again.", false);
     }
 
     submitBtn.disabled = false;
