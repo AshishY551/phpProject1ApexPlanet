@@ -41,3 +41,13 @@ Username: testuser8
 Email: test8@demo.com
 Password: test81234
 Confirm Password: test81234
+✅9
+Username: testuser9
+Email: test9@demo.com
+Password: test91234
+Confirm Password: test91234
+✅10
+Username: testuser10
+Email: test10@demo.com
+Password: test101234
+Confirm Password: test101234

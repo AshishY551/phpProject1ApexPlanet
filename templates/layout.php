@@ -212,12 +212,22 @@
 
 
   <script src="/public/assets/js/components/delete-post-modal.js" defer></script>
+  <!-- ✅ Make auth.js Is Loaded -->
+  <script src="/public/assets/js/authentication/auth.js" defer></script>
+  <!-- Floating Signup/Login Notification Banner -->
+  <script src="/public/assets/js/authentication/auth-notice.js" defer></script>
+
+
 
   <!-- <!?= $scripts ?? '' ?> -->
 
+  <!-- 📦 Load Modals Once -->
   <!-- ✅ AUTH Modals: Login & Signup -->
   <?php include_once __DIR__ . '/../sections/modals/login-modal.php'; ?>
   <?php include_once __DIR__ . '/../sections/modals/signup-modal.php'; ?>
+  <!-- Floating Signup/Login Notification Banner -->
+  <?php include_once __DIR__ . '/../components/authentication/auth-notice.php'; ?>
+
 
 </body>
 
