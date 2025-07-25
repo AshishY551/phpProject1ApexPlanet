@@ -53,6 +53,14 @@ try {
         echo json_encode(['success' => false, 'message' => 'An account with this email already exists.']);
         exit;
     }
+    // ✅ Check if username already exists
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username LIMIT 1");
+    $stmt->execute(['username' => $username]);
+    if ($stmt->fetch()) {
+        echo json_encode(['success' => false, 'message' => 'Username already taken. Please choose another.']);
+        exit;
+    }
+
 
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);

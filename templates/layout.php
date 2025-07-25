@@ -229,6 +229,9 @@
   <?php include_once __DIR__ . '/../components/authentication/auth-notice.php'; ?>
 
 
+  <!-- ✅ Toast Element (must be present in ALL pages using showToast) -->
+  <div id="toast" class="fixed bottom-6 right-6 hidden text-white bg-green-500 dark:bg-green-600 px-4 py-2 rounded-lg shadow-lg z-50 transition duration-300 ease-in-out"></div>
+
 </body>
 
 </html>
