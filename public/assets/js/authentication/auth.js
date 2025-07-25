@@ -85,3 +85,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+
+// 🔁 Reusable Submit Handler for Modal Forms
+
+// 🔁 Reusable Submit Handler for Modal Forms
+async function handleAuthForm(formId, url, successRedirect = null, buttonText = "Submit") {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "⏳ Processing...";
+
+    const formData = new FormData(form);
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        body: new URLSearchParams(formData),
+      });
+      const data = await res.json();
+      showToast(data.message, data.success);
+      if (data.success) {
+        form.reset();
+        if (successRedirect) {
+          setTimeout(() => window.location.href = successRedirect, 1500);
+        }
+      }
+    } catch (err) {
+      showToast("❌ Network error. Please try again.", false);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = buttonText;
+  });
+}
+
+// ✅ Modal-based signup
+handleAuthForm("signupFormModal", "/modules/users/register.php", null, "✅ Register");
+
+// ✅ Modal-based login
+handleAuthForm("loginFormModal", "/modules/users/login.php", "/views/dashboard.php", "🚀 Sign In");

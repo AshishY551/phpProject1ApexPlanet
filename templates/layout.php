@@ -215,6 +215,10 @@
 
   <!-- <!?= $scripts ?? '' ?> -->
 
+  <!-- ✅ AUTH Modals: Login & Signup -->
+  <?php include_once __DIR__ . '/../sections/modals/login-modal.php'; ?>
+  <?php include_once __DIR__ . '/../sections/modals/signup-modal.php'; ?>
+
 </body>
 
 </html>

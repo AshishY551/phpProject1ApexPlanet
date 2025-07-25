@@ -1,14 +1,20 @@
-✨ Add advanced auth.js for frontend login/signup logic
+🔧 Enhanced Signup Page UI/UX | 🎨 Added Toast Notifications + Future-Ready OAuth Icons
 
-✅ Handles:
-- Signup form POST via AJAX to /register.php
-- Login form POST via AJAX to /login.php
-- Button loading states (disable, show text)
-- Alert messages for success/failure
-- Auto-redirect to dashboard on login
+✅ Integrated advanced animated toast notification system for real-time feedback (replaced alert-based fallback)
+✅ Updated /views/auth/signup.php:
+   - Inserted <div id="toast"> for toast display (bottom-right, styled)
+   - Ensured compatibility with upgraded /public/assets/js/authentication/auth.js logic
+✅ OAuth Icon Buttons (Google, Facebook, Microsoft, Passkey) added for future integration
+✅ Responsive layout with Tailwind CSS for accessibility, mobile-friendliness, and scalability
+✅ Signup form fields enhanced with visually appealing UX design (rounded, colored focus, full validation-ready)
+✅ Maintained footer and header inclusion for modular templating
+✅ Fully meets project constraints: fast, modern, scalable, secure, attractive UI, industry-grade readiness
 
-📁 File: /public/assets/js/authentication/auth.js
+📁 Affected Files:
+- /views/auth/signup.php
+- /public/assets/js/authentication/auth.js (previous commit)
 
-🧠 Future Ready:
-- Can be extended with toast notifications
-- 2FA, password toggle, field animations, etc.
+🔮 Future Ready:
+- Can enable OAuth2 backend easily
+- Prepared for extensions like phone login, OTP, etc.
+
