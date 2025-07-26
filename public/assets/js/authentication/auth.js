@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // 🔐 Handle Signup
   // 🔐 Handle Signup
   const signupForm = document.getElementById("signupForm");
   if (signupForm) {
@@ -88,9 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
     signupForm.dataset.listenerAttached = "true";
   }
 
+
+
+  // 🔐 Handle Login
   // 🔐 Handle Login
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
+      // 👇  Prevents silent double-submits
+    if (loginForm.dataset.listenerAttached) return;
+    loginForm.dataset.listenerAttached = "true";
+
+
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const submitBtn = loginForm.querySelector("button[type='submit']");
@@ -103,8 +113,22 @@ document.addEventListener("DOMContentLoaded", () => {
           method: "POST",
           body: new URLSearchParams(formData),
         });
-        const data = await res.json();
-        showToast(data.message, data.success);
+        // const data = await res.json();
+        // ✅ This prevents silent fails when some comment or HTML breaks the JSON.
+        const text = await res.text();
+        let data;
+
+        try {
+          data = JSON.parse(text);
+        } catch (err) {
+          console.error("❌ Server response is not valid JSON:", text);
+          showToast("❌ Server error: Unexpected response.", false);
+          return;
+        }
+
+
+        // showToast(data.message, data.success);
+        showToast(data.message || "✅ Login successful!", data.success);
         if (data.success) {
           setTimeout(() => window.location.href = "/views/dashboard.php", 1500);
         }
@@ -123,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // 🔁 Reusable Submit Handler for Modal Forms
-
+// 🔁 Reusable Submit Handler for Modal Forms
 // 🔁 Reusable Submit Handler for Modal Forms
 async function handleAuthForm(formId, url, successRedirect = null, buttonText = "Submit") {
   const form = document.getElementById(formId);

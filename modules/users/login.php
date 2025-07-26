@@ -1,5 +1,5 @@
-<!-- login.php ✅ POST login logic -->
 <?php
+// <!-- login.php ✅ POST login logic -->
 // modules/users/login.php
 
 require_once __DIR__ . '/../../includes/db.php';
