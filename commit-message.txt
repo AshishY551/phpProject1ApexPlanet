@@ -1,55 +1,22 @@
-✨🔐 Signup Modal Flow Fully Integrated with Debug
+✅ Debug: Signup Modal Flow Fixed — Toasts, Validation, Duplicate Handling
 
-✅ Modal-based Signup UI (signup-modal.php):
-- Built responsive, user-friendly modal using Tailwind CSS
-- Styled fields, transitions, and modal layout
-- Switch-to-login link with toggleModal()
+🔧 Fixed:
+- Toast notifications now displaying correctly by isolating auth.js logic
+- Resolved JS interference between full-page and modal signups
 
-✅ Auth Notice (auth-notice.php + auth-notice.js):
-- Displays signup/login modal as notification prompt
-- Uses sessionStorage to show only once per session
-- Dismissible banner with interactive button
+✅ Signup Modal Working:
+- AJAX-enabled signup (no reload)
+- Modal opens on page load with dismiss option
+- Fully functional signup flow from UI to DB
 
-✅ Backend Logic (register.php):
-- Sanitization and validation of fields (username, email, password)
-- Checks for:
-  - Empty/short username
-  - Invalid email
-  - Password mismatch / length
-- Unique checks:
-  - Email already exists ✅
-  - Username already exists ✅
-- Slug generation using helper function
-- Password hashing using bcrypt
-- Secure database insert using PDO (prepared statements)
-- JSON response for AJAX handling
-- Structured error messages and try-catch for server fallback
+🛡️ Validation:
+- Duplicate email and username checks before insert
+- Error messages shown inline via toast
+- Green success toast on successful registration
+- Form reset after success
 
-✅ JS Integration (auth.js / auth-notice.js):
-- Handles both full-page (`signupForm`) and modal (`signupFormModal`) AJAX submits
-- Show success/error via toast (green/red)
-- Auto-reset form on success
-- Auto-close modal after delay
-- Redirect to login page (planned)
-- Prevents default behavior to avoid full page reload
-- Console debugging added to trace issues
-- Modular submit handler (`handleAuthForm`) for reuse
+🐞 Issue:
+- Previously toast was hidden due to overlapping scripts
+- Caused false 'Network Error' despite DB insert
 
-🐞 Debugging Issues Fixed:
-- Fixed missing toast visibility behind modal
-- Fixed `auth.js` not being loaded in some views
-- Investigated network-level errors and DB ID gaps
-- Traced cause of duplicate insert attempts (double binding)
-- Added guard to prevent race condition double-submits (if needed)
-
-⚠️ Known Remaining:
-- Signup modal triggers duplicate insert when JS bindings conflict
-- Toast may sometimes still be obscured on quick modal open
-- Possible ID skip in DB due to failed second insert (expected in auto-increment)
-
-🎯 Next Step:
-- Finalize modal login logic
-- Integrate session, redirect, and logout system
-
-🔖 Release tag: signup-modal-v1
-
+🎯 Auth UX Now Stable. Ready for further te testing.
