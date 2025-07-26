@@ -216,7 +216,19 @@
   <!-- auth,js already exists in signup.php -->
   <!-- <script src="/public/assets/js/authentication/auth.js" defer></script> -->
   <!-- Floating Signup/Login Notification Banner -->
-  <script src="/public/assets/js/authentication/auth-notice.js" defer></script>
+  <!-- <script src="/public/assets/js/authentication/auth-notice.js" defer></script> -->
+  <!-- 🧠 Conditional JS Loader Based on Page -->
+  <?php
+  $currentPage = basename($_SERVER['SCRIPT_NAME']);
+  ?>
+
+  <?php if ($currentPage === 'signup.php'): ?>
+    <script src="/public/assets/js/authentication/auth.js" defer></script>
+  <?php endif; ?>
+
+  <?php if ($currentPage === 'index.php'): ?>
+    <script src="/public/assets/js/authentication/auth-notice.js" defer></script>
+  <?php endif; ?>
 
 
 
@@ -232,6 +244,8 @@
 
   <!-- ✅ Toast Element (must be present in ALL pages using showToast) -->
   <div id="toast" class="fixed bottom-6 right-6 hidden text-white bg-green-500 dark:bg-green-600 px-4 py-2 rounded-lg shadow-lg z-50 transition duration-300 ease-in-out"></div>
+
+
 
 </body>
 

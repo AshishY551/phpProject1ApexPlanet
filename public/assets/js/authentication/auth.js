@@ -83,6 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = false;
       submitBtn.textContent = "🚀 Sign Up";
     });
+    
+    // ✅ Add this line to prevent double-binding
+    signupForm.dataset.listenerAttached = "true";
   }
 
   // 🔐 Handle Login

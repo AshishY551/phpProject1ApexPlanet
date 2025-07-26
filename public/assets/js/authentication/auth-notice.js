@@ -82,5 +82,7 @@ async function handleModalSignup() {
     submitBtn.disabled = false;
     submitBtn.textContent = "✅ Register";
   });
+  // ✅ Add this line to prevent double-binding in the future
+  form.dataset.listenerAttached = "true";
 }
 
