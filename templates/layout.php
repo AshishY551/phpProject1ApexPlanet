@@ -213,7 +213,8 @@
 
   <script src="/public/assets/js/components/delete-post-modal.js" defer></script>
   <!-- ✅ Make auth.js Is Loaded -->
-  <script src="/public/assets/js/authentication/auth.js" defer></script>
+  <!-- auth,js already exists in signup.php -->
+  <!-- <script src="/public/assets/js/authentication/auth.js" defer></script> -->
   <!-- Floating Signup/Login Notification Banner -->
   <script src="/public/assets/js/authentication/auth-notice.js" defer></script>
 

@@ -61,3 +61,8 @@ Username: testuser12
 Email: test12@demo.com
 Password: test121234
 Confirm Password: test121234
+✅13
+Username: testuser13
+Email: test13@demo.com
+Password: test131234
+Confirm Password: test131234
