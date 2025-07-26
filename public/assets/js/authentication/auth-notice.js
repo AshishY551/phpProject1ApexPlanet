@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000);
   }
   // 🚀 Init modal signup form handler
-  handleModalSignup();
+  handleModalSignup(); // ✅
+  handleModalLogin();  // ✅
 });
 
 
@@ -42,6 +43,8 @@ function toggleModal(id) {
 
 
 // ✅ 2. Below toggleModal() function:
+// 🔁 Modal-based signup handler
+// 🔁 Modal-based signup handler
 // 🔁 Modal-based signup handler
 async function handleModalSignup() {
   const form = document.getElementById("signupFormModal");
@@ -86,3 +89,53 @@ async function handleModalSignup() {
   form.dataset.listenerAttached = "true";
 }
 
+
+// 🔁 Modal-based LOGIN handler
+// 🔁 Modal-based LOGIN handler
+// 🔁 Modal-based LOGIN handler
+// 🔁 Modal-based login handler
+async function handleModalLogin() {
+  const form = document.getElementById("loginFormModal");
+  if (!form || form.dataset.listenerAttached) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Signing in...";
+
+    const formData = new FormData(form);
+    try {
+      const res = await fetch("/modules/users/login.php", {
+        method: "POST",
+        body: new URLSearchParams(formData),
+      });
+
+      const data = await res.json();
+      showToast(data.message, data.success);
+
+      if (data.success) {
+        form.reset();
+        const modal = form.closest(".fixed");
+        if (modal) {
+          modal.classList.add("fade-out");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+            modal.classList.remove("fade-out");
+          }, 400);
+        }
+        setTimeout(() => {
+          window.location.href = "/views/dashboard.php";
+        }, 1500);
+      }
+    } catch (err) {
+      showToast("❌ Network error - modal login.", false);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "🚀 Sign In";
+  });
+
+  form.dataset.listenerAttached = "true"; // Prevent double-binding
+}

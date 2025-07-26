@@ -1,5 +1,14 @@
 <!-- ✅ 🏢 AUTH MODULE SCOPED VIEWS -->
 
+🧠 Future Ideas (No need now, but safe to add later):
+✅ Add “remember me” cookie logic
+
+✅ Log last login time or IP in DB
+
+✅ Rate limit brute-force attempts using sessions
+
+✅ Redirect non-verified users (if you add email verification)
+
 test users-
 ✅1
 Username: testuser
